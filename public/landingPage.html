@@ -1,0 +1,91 @@
+<input id="button" type="submit" name="button" onclick="CreateLobby()" href="http://www.w3schools.com/html/" value="CreateLobby"/>
+<input id="button" type="submit" name="button" onclick="RemoveLobby()" value="RemoveLobby"/>
+
+<input id="button1" type="submit" name="button" onclick="CreateLobby()" value="Play1"/>
+<input id="button2" type="submit" name="button" onclick="ReadData()" value="Play2"/>
+<input id="button3" type="submit" name="button" onclick="CreateLobby()" value="Play3"/>
+<input id="button4" type="submit" name="button" onclick="ReadData()" value="Play4"/>
+<input id="button5" type="submit" name="button" onclick="CreateLobby()" value="Play5"/>
+<input id="button6" type="submit" name="button" onclick="ReadData()" value="Play6"/>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+<script>
+
+	function ViewLobbys()
+	{
+		firebaseDB.on("value", function(snapshot) {
+			for (item in snapshot.val())
+			{
+				document.body.innerHTML = "<div> Lobby " + item + " </div>";
+			}
+		   
+		}, function (error) {
+		   console.log("Error: " + error.code);
+		});
+	}
+
+	setInterval(ViewLobbys, 1000);
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDDQw5tZVqBOznpnIpOE_g2L3DabTrK8Gs",
+    authDomain: "spartahack-2017.firebaseapp.com",
+    databaseURL: "https://spartahack-2017.firebaseio.com",
+    storageBucket: "spartahack-2017.appspot.com",
+    messagingSenderId: "900483113058"
+  };
+  firebase.initializeApp(config);
+  var firebaseDB = firebase.database().ref();
+
+  var numLobbies = 0;
+
+</script>
+
+
+<script>
+	function PushItem()
+	{
+
+	}
+
+	function CreateLobby(){
+		if (numLobbies <= 9)
+		{
+			var lobbyName = "TestLobby" + numLobbies;
+			firebaseDB.child(lobbyName).set({
+				Data:
+				{
+					id: numLobbies,
+					users: 1
+				}
+			});
+			numLobbies++;
+		}
+		else
+		{
+			numLobbies = 0;
+			CreateLobby();
+		}
+	}
+	/**
+	firebaseDB.push({
+			name: lobbyName,
+			id: numLobbies,
+			users: 1
+	});
+	numLobbies = numLobbies + 1;
+	}
+	**/
+	function RemoveLobby(){
+		firebaseDB.remove();
+	}
+	/**
+	function ReadData(){
+		firebaseDB.on("value", function(snapshot) {
+			console.log(snapshot.val());
+		}, function (error) {
+			console.log("Error: " + error.code);
+		});
+	}
+	**/
+</script>
