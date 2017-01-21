@@ -1,35 +1,59 @@
 
 <!-- saved from url=(0062)https://shining-inferno-8791.firebaseapp.com/controller01.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title></title>
-    </head>
-    <body bgcolor="black">
-    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3" name="viewport">
-    <meta content="width=device-width, user-scalable=no" name="viewport">
-    <table style="float: left">
-        <tbody>
-            <tr>
-                <td><a class="myButton" href="#" id="kick1Element" onclick="toggleColor(this.id)"></a></td> <!--Kick 1-->
-                <td><a class="myButton" href="#" id="kick2Element" onclick="toggleColor(this.id)"></a></td> <!--Kick 2 -->
-                <td><a class="metr" href="#" id="metronomeon" onclick="toggleColor(this.id)"></a></td>
-            </tr>
-            <tr>
-                <td><a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id)"></a></td> <!--Snare-->
-                <td><a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id)"></a></td> <!--Clap-->
-                <td><a class="metr" href="#" id="metronomepause" onclick="toggleColor(this.id)"></a></td>
-            </tr>
-            <tr>
-                <td><a class="myButton" href="#" id="hihatElement" onclick="toggleColor(this.id)"></a></td> <!--HiHat-->
-                <td><a class="myButton" href="#" id="crashElement" onclick="toggleColor(this.id)"></a></td> <!--crash-->
-                <td><a class="nextButton1" href="#" id="controller2"></a></td>
-            </tr>
-            <tr>
-                <td><a class="myButton" href="#" id="loop1Element" onclick="toggleColor(this.id)"></a></td> <!--loop1-->
-                <td><a class="myButton" href="#" id="loop2Element" onclick="toggleColor(this.id)"></a></td> <!--loop2-->
-                <td><a class="nextButton2" href="#" id="controller2"></a></td>
-            </tr>
-        </tbody>
-    </table>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta content="width=device-width, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title>spartahack-2017</title>
+  </head>
+  <body style="background-color: black">
+
+    <div class="row" style="text-align:center">
+      <div class="col-md-4 text-center">
+        <div class="row">
+            <h1> Vocals </h1>
+            <a class="myButton" href="#" id="kick1Element" onclick="toggleColor(this.id)"></a> <!--Kick 1-->
+            <a class="myButton" href="#" id="kick2Element" onclick="toggleColor(this.id)"></a><!--Kick 2 -->
+            <a class="myButton" href="#" id="metronomeon" onclick="toggleColor(this.id)"></a>
+        </div>
+        <div class="row">
+            <a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id)"></a> <!--Snare-->
+            <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id)"></a> <!--Clap-->
+            <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id)"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <h1> Drums </h1>
+            <a class="myButton" href="#" id="kick1Element" onclick="toggleColor(this.id)"></a> <!--Kick 1-->
+            <a class="myButton" href="#" id="kick2Element" onclick="toggleColor(this.id)"></a><!--Kick 2 -->
+            <a class="myButton" href="#" id="metronomeon" onclick="toggleColor(this.id)"></a>
+        </div>
+        <div class="row">
+            <a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id)"></a> <!--Snare-->
+            <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id)"></a> <!--Clap-->
+            <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id)"></a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <h1> Bass </h1>
+            <a class="myButton" href="#" id="kick1Element" onclick="toggleColor(this.id)"></a> <!--Kick 1-->
+            <a class="myButton" href="#" id="kick2Element" onclick="toggleColor(this.id)"></a><!--Kick 2 -->
+            <a class="myButton" href="#" id="metronomeon" onclick="toggleColor(this.id)"></a>
+        </div>
+        <div class="row">
+            <a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id)"></a> <!--Snare-->
+            <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id)"></a> <!--Clap-->
+            <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id)"></a>
+        </div>
+      </div>
+
+
+    </div>
+
     <script src="/howlerconfig/howler.js-master/dist/howler.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
     <script>
@@ -162,7 +186,7 @@
         top:1px;
     }
     </style>
-
+<!--
     <style type="text/css">.metr {
         background-color:#ffffff;
         display:inline-block;
@@ -221,5 +245,5 @@
         position:relative;
         top:1px;
     }
-    </style>
+    </style> -->
 </body></html>
