@@ -1,0 +1,33 @@
+<input id="button" type="submit" name="button" onclick="myFunction();" value="Button1"/>
+
+
+<script src="/Users/jackmansueti/Desktop/howlerconfig/howler.js-master/dist/howler.js"></script>
+
+<html>
+    <head>
+		<script>
+			function myFunction(){
+				var selected = false;
+				var sound = new Howl({ 
+										src: ['sound.mp3'],
+										loop: true
+									});
+				sound.play();
+				sound.play();
+				selected = !selected;
+				showBoolean(selected);
+			};
+		</script>
+    
+    	<script>
+    	function showBoolean(selected)
+    	{
+			document.getElementById('target').innerHTML = selected;
+    	}
+    	</script>
+
+    </head>
+    <body onload="showBoolean(false)">
+        <span id="target"></span>
+    </body>
+</html>
