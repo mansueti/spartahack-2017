@@ -6,30 +6,31 @@
     <body bgcolor="black">
     <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3" name="viewport">
     <meta content="width=device-width, user-scalable=no" name="viewport">
-    <table>
+    <table style="float: left">
         <tbody>
             <tr>
-                <td><a class="myButton" href="#" id="kick1Element"></a></td> <!--Kick 1-->
-                <td><a class="myButton" href="#" id="kick2Element"></a></td> <!--Kick 2 -->
-                <td><a class="metr" href="#" id="metronomeon"></a></td>
+                <td><a class="myButton" href="#" id="kick1Element" onclick="toggleColor(this.id)"></a></td> <!--Kick 1-->
+                <td><a class="myButton" href="#" id="kick2Element" onclick="toggleColor(this.id)"></a></td> <!--Kick 2 -->
+                <td><a class="metr" href="#" id="metronomeon" onclick="toggleColor(this.id)"></a></td>
             </tr>
             <tr>
-                <td><a class="myButton" href="#" id="snare1Element"></a></td> <!--Snare-->
-                <td><a class="myButton" href="#" id="clap1Element"></a></td> <!--Clap-->
-                <td><a class="metr" href="#" id="metronomepause"></a></td>
+                <td><a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id)"></a></td> <!--Snare-->
+                <td><a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id)"></a></td> <!--Clap-->
+                <td><a class="metr" href="#" id="metronomepause" onclick="toggleColor(this.id)"></a></td>
             </tr>
             <tr>
-                <td><a class="myButton" href="#" id="hihatElement"></a></td> <!--HiHat-->
-                <td><a class="myButton" href="#" id="crashElement"></a></td> <!--crash-->
+                <td><a class="myButton" href="#" id="hihatElement" onclick="toggleColor(this.id)"></a></td> <!--HiHat-->
+                <td><a class="myButton" href="#" id="crashElement" onclick="toggleColor(this.id)"></a></td> <!--crash-->
                 <td><a class="nextButton1" href="#" id="controller2"></a></td>
             </tr>
             <tr>
-                <td><a class="myButton" href="#" id="loop1Element"></a></td> <!--loop1-->
-                <td><a class="myButton" href="#" id="loop2Element"></a></td> <!--loop2-->
+                <td><a class="myButton" href="#" id="loop1Element" onclick="toggleColor(this.id)"></a></td> <!--loop1-->
+                <td><a class="myButton" href="#" id="loop2Element" onclick="toggleColor(this.id)"></a></td> <!--loop2-->
                 <td><a class="nextButton2" href="#" id="controller2"></a></td>
             </tr>
         </tbody>
     </table>
+    <script src="/howlerconfig/howler.js-master/dist/howler.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
     <script>
       // Initialize Firebase
@@ -72,46 +73,57 @@
     }
     function handlekick2(e){
         e.preventDefault();
-        myFirebaseRef.push("51");
+        // myFirebaseRef.push("51");
 
     }
     function handlesnare1(e){
         e.preventDefault();
-        myFirebaseRef.push("50");
+        // myFirebaseRef.push("50");
 
     }
     function handleclap1(e){
         e.preventDefault();
-        myFirebaseRef.push("119");
+        // myFirebaseRef.push("119");
 
     }
     function handlehihat(e){
         e.preventDefault();
-        myFirebaseRef.push("49");
+        // myFirebaseRef.push("49");
 
     }
     function handlecrash(e){
         e.preventDefault();
-        myFirebaseRef.push("101");
+        // myFirebaseRef.push("101");
 
     }
     function handleloop1(e){
         e.preventDefault();
-        myFirebaseRef.push("190");
+        // myFirebaseRef.push("190");
     }
     function handleloop2(e){
         e.preventDefault();
-        myFirebaseRef.push("191");
+        // myFirebaseRef.push("191");
     }
     function handlemetr(e){
         e.preventDefault();
-        myFirebaseRef.push("1");
+        // myFirebaseRef.push("1");
     }
 
+    function toggleColor(id) {
+      var element = document.getElementById(id);
+      console.log(element.style.backgroundColor);
+      if (element.style.backgroundColor == "" || element.style.backgroundColor == "#ffffff" || element.style.backgroundColor == "rgb(255,255,255)") {
+        element.style.backgroundColor = "#715bff";
+      } else {
+        element.style.backgroundColor = "";
+      }
+      // this.style.background = #000000;
+    }
     </script>
 
 
-    <style type="text/css">.myButton {
+    <style type="text/css">
+    .myButton {
         background-color:#ffffff;
         display:inline-block;
         cursor:pointer;
@@ -119,10 +131,31 @@
         font-family:Arial;
         font-size:8px;
         padding:60px 60px;
-        text-decoration:none;
+        border-radius: 10px;
+        border-width: 2px;
+        text-shadow: : 50px;
+        /*text-decoration:none;*/
     }
     .myButton:hover {
-        background-color:#5cbf2a;
+      /* IE10+ */
+      background-image: -ms-radial-gradient(center, ellipse farthest-corner, #FFFFFF -30%, #2CB831 100%);
+
+      /* Mozilla Firefox */
+      background-image: -moz-radial-gradient(center, ellipse farthest-corner, #FFFFFF -30%, #2CB831 100%);
+
+      /* Opera */
+      background-image: -o-radial-gradient(center, ellipse farthest-corner, #FFFFFF -30%, #2CB831 100%);
+
+      /* Webkit (Safari/Chrome 10) */
+      background-image: -webkit-gradient(radial, center center, 0, center center, 286, color-stop(-30, #FFFFFF), color-stop(100, #2CB831));
+
+      /* Webkit (Chrome 11+) */
+      background-image: -webkit-radial-gradient(center, ellipse farthest-corner, #FFFFFF -30%, #2CB831 100%);
+
+      /* W3C Markup */
+      background-image: radial-gradient(ellipse farthest-corner at center, #FFFFFF -30%, #2CB831 100%);
+
+        /*background-color:#5cbf2a;*/
     }
     .myButton:active {
         position:relative;
@@ -138,6 +171,7 @@
         font-family:Arial;
         font-size:8px;
         padding:60px 60px;
+        border-radius: 10px;
         text-decoration:none;
     }
     .metr:hover {
@@ -157,6 +191,7 @@
         font-family:Arial;
         font-size:8px;
         padding:60px 60px;
+        border-radius: 10px;
         text-decoration:none;
     }
     .nextButton1:hover {
@@ -176,6 +211,7 @@
         font-family:Arial;
         font-size:8px;
         padding:60px 60px;
+        border-radius: 10px;
         text-decoration:none;
     }
     .nextButton2:hover {

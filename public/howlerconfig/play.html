@@ -1,15 +1,15 @@
 <input id="button" type="submit" name="button" onclick="myFunction();" value="Button1"/>
 
 
-<script src="/howler.js-master/dist/howler.js"></script>
+<script src="/howlerconfig/howler.js-master/dist/howler.js"></script>
 
 <html>
     <head>
 		<script>
 			function myFunction(){
 				var selected = false;
-				var sound = new Howl({ 
-										src: ['sound.mp3'],
+				var sound = new Howl({
+										src: ['/sounds/clap.wav'],
 										loop: true
 									});
 				sound.play();
@@ -18,7 +18,7 @@
 				showBoolean(selected);
 			};
 		</script>
-    
+
     	<script>
     	function showBoolean(selected)
     	{
