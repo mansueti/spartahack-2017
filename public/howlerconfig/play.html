@@ -1,24 +1,64 @@
-<input id="button" type="submit" name="button" onclick="myFunction();" value="Button1"/>
+<input id="button1" type="submit" name="button" onclick="loop(['item1']);" value="Button1"/>
+<input id="button" type="submit" name="button" onclick="loop2();" value="Button2"/>
+<input id="button" type="submit" name="button" onclick="loop3();" value="Button3"/>
 
 
-<script src="/howlerconfig/howler.js-master/dist/howler.js"></script>
+<script src="/howlerconfig/howlLib/dist/howler.js"></script>
 
 <html>
     <head>
 		<script>
-			function myFunction(){
-				var selected = false;
-				var sound = new Howl({
-										src: ['/sounds/clap.wav'],
-										loop: true
-									});
-				sound.play();
-				sound.play();
-				selected = !selected;
-				showBoolean(selected);
-			};
-		</script>
+			var toPlay = [];
+			var playing = false;
 
+			var sound = new Howl({ 
+									src: ['chords_8.wav'],
+									loop: true
+								});
+			var sound2 = new Howl({ 
+									src: ['vocal1_8.wav'],
+									loop: true
+								});
+			var sound3 = new Howl({ 
+									src: ['drum_4.wav'],
+									loop: true
+								});
+			function play(playing)
+			{
+				var playing = playing;
+				for (int i = 0; i < playing.length; i++)
+				{
+					playing[i].play();
+				}
+			}
+			
+			function loop()
+			{
+				playing[playing.length + 1] = sound;
+				play();
+			}
+
+			function loop2()
+			{
+				playing[playing.length + 1] = sound2;
+			}
+
+			function loop3()
+			{
+				sound3.play();
+				playing[playing.length + 1] = sound3;
+			}
+
+			function looparp()
+			{
+				var sound2 = new Howl({ 
+										src: ['drum_4.wav'],
+									});
+
+				sound2.play();
+			}
+		</script>
+    
     	<script>
     	function showBoolean(selected)
     	{
