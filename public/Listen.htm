@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <!-- saved from url=(0056)https://shining-inferno-8791.firebaseapp.com/listen.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+
     <!-- Basic Page Needs
      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    
+
         <title>FriendKeys</title>
         <meta name="description" content="">
             <meta name="author" content="">
-                
+
                 <!-- Mobile Specific Metas
                  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
                 <meta name="viewport" content="width=device-width, initial-scale=1">
-                    
+
                     <!-- FONT
                      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
                     <link href="./Listen_files/css" rel="stylesheet" type="text/css">
-                        
+
                         <!-- CSS
                          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
                         <link rel="stylesheet" href="./Listen_files/normalize.css">
                             <link rel="stylesheet" href="./Listen_files/skeleton.css">
-                                
+
                                 <!-- Favicon
                                  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
                                 <link rel="icon" type="image/png" href="https://shining-inferno-8791.firebaseapp.com/libs/Skeleton-2.0.4/images/favicon.jpg">
-                                    
+
 </head>
 <body>
     <!-- Primary Page Layout
@@ -38,12 +38,12 @@
 
 
 
-        
-        
+
+
         <script type="text/javascript" src="./Listen_files/howler.js"></script>
         <script type="text/javascript" src="./Listen_files/howler.min.js"></script>
         <script src="./Listen_files/firebase.js"></script>
-        
+
         <script>
             var clap = new Howl({urls: ['clap.wav']});
             var snare = new Howl({urls: ['snare.mp3']});
@@ -69,10 +69,10 @@
             var pianohalfmid = new Howl({urls: ['2mid.mp3']});
             var pianohalfhigh = new Howl({urls: ['2high.mp3']});
             var drakeohyah = new Howl({urls: ['drake_yeah.mp3']});
-            
-            var myFirebaseRef = new Firebase("https://shining-inferno-8791.firebaseio.com/");
-            
-            
+
+            var myFirebaseRef = new Firebase("https://spartahack-2017.firebaseio.com/");
+
+
 
             myFirebaseRef.on("child_added",function(soundback){
                              var soundid = soundback.val();
@@ -84,14 +84,14 @@
                              }
                              else if (soundid == "50") {//2 is linked to snare (50 keycode)
                              snare.play();
-                             
+
                              }
                              else if (soundid == "51"){   //3 is linked to kick2 (51 keycode)
                              kick2.play();
                              }
                              else if (soundid == "119") {//w is linked to clap (119 keycode)
                              clap.play();
-                             
+
                              }
                              else if (soundid == "101") {//e is linked to crash (101 keycode)
                              crash.play();
@@ -102,25 +102,25 @@
                              else if (soundid == "191") {//191 is linked to loop2
                              loop2.play();
                              }
-                             
-                             
-                             
-                             
+
+
+
+
                              else if (soundid == "97") {//a is linked to key_low (97 keycode)
                              key_low.play();
-                             
+
                              }
                              else if (soundid == "115") {//s is linked to key_mid (115 keycode)
                              key_mid.play();
-                             
+
                              }
                              else if (soundid == "100") {//d is linked to key_midhigh (100 keycode)
                              key_midhigh.play();
-                             
+
                              }
                              else if (soundid == "102") {//f is linked to key_high (102 keycode)
                              key_high.play();
-                             
+
                              }
                              else if (soundid == "30"){ //two quarter note piano low keys
                              pianohalflow.play();
@@ -131,34 +131,34 @@
                              else if (soundid == "32"){//two quarter note piano high keys
                              pianohalfhigh.play();
                              }
-                             
-                             
-                             
+
+
+
                              else if (soundid == "103") {//g is linked to synth1_lowest (103 keycode)
                              synth1_lowest.play();
-                             
+
                              }
                              else if (soundid == "104") {//h is linked to synth1_low (104 keycode)
                              synth1_low.play();
-                             
+
                              }
                              else if (soundid == "106") {//j is linked to synth1_midlow (106 keycode)
                              synth1_midlow.play();
-                             
+
                              }
                              else if (soundid == "109") {//m is linked to synth1_mid (109 keycode)
                              synth1_mid.play();
                              }
                              else if (soundid == "107") {//k is linked to synth1_high (107 keycode)
                              synth1_high.play();
-                             
+
                              }
                              else if (soundid == "108") {//l is linked to synth1_highest (108 keycode)
                              synth1_highest.play();
-                             
+
                              }
-                             
-                             
+
+
                              else if (soundid == "200"){//donald trump soundboard
                              donald.play();
                              }
@@ -169,10 +169,10 @@
                              drakeohyah.play();
                              }
                              soundback.ref().remove();//remove child from node
-                             
+
                              });
-        
-        
+
+
             </script>
-    
+
 </body></html>

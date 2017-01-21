@@ -1,0 +1,28 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    </head>
+    <body bgcolor="black">
+      <button onclick="start()"> Test </button>
+      <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyDDQw5tZVqBOznpnIpOE_g2L3DabTrK8Gs",
+          authDomain: "spartahack-2017.firebaseapp.com",
+          databaseURL: "https://spartahack-2017.firebaseio.com",
+          storageBucket: "spartahack-2017.appspot.com",
+          messagingSenderId: "900483113058"
+        };
+        firebase.initializeApp(config);
+
+      </script>
+      <script>
+      // var myFirebaseRef = new Firebase("https://spartahack-2017.firebaseio.com/");
+        function start() {
+          var database = firebase.database();
+          // myFirebaseRef.rpush("113");
+          database.ref().push("110");
+          // alert("ha");
+        }
+      </script>
+    </body>
