@@ -1,0 +1,157 @@
+
+<!-- saved from url=(0062)https://shining-inferno-8791.firebaseapp.com/controller03.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+    </head>
+    <body bgcolor="black">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3" name="viewport">
+    <meta content="width=device-width, user-scalable=no" name="viewport">
+    <table>
+        <tbody>
+            <tr>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller03.html#" id="synthlowestElement"></a></td>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller03.html#" id="synthlowElement"></a></td>
+                <td><a class="metr" href="https://shining-inferno-8791.firebaseapp.com/controller03.html#" id="nullid1"></a></td>
+            </tr>
+            <tr>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller03.html#" id="synthmidlowElement"></a></td>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller03.html#" id="synthmidElement"></a></td>
+                <td><a class="metr" href="https://shining-inferno-8791.firebaseapp.com/controller03.html#" id="nullid2"></a></td>
+            </tr>
+            <tr>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller03.html#" id="synthhighElement"></a></td>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller03.html#" id="synthhighestElement"></a></td>
+                <td><a class="nextButton1" href="https://shining-inferno-8791.firebaseapp.com/controller02.html" id="controller2"></a></td>
+            </tr>
+            <tr>
+                <td><a class="metr" href="https://shining-inferno-8791.firebaseapp.com/controller03.html#" id="nullid3"></a></td>
+                <td><a class="metr" href="https://shining-inferno-8791.firebaseapp.com/controller03.html#" id="nullid4"></a></td>
+                <td><a class="nextButton2" href="https://shining-inferno-8791.firebaseapp.com/controller01.html" id="controller2"></a></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="./controller03_files/firebase.js"></script>
+    <script>
+        var myFirebaseRef = new Firebase("https://shining-inferno-8791.firebaseio.com/");
+        var buttonSynthlowest = document.getElementById("synthlowestElement");
+        var buttonSynthlow = document.getElementById("synthlowElement");
+        var buttonSynthmidlow = document.getElementById("synthmidlowElement");
+        var buttonSynthmid = document.getElementById("synthmidElement");
+        var buttonSynthhigh = document.getElementById("synthhighElement");
+        var buttonSynthhighest = document.getElementById("synthhighestElement");
+        buttonSynthlowest.addEventListener("touchstart",handlesynthlowest,false);
+        buttonSynthlow.addEventListener("touchstart",handlesynthlow,false);
+        buttonSynthmidlow.addEventListener("touchstart",handlesynthmidlow,false);
+        buttonSynthmid.addEventListener("touchstart",handlesynthmid,false);
+        buttonSynthhigh.addEventListener("touchstart",handlesynthhigh,false);
+        buttonSynthhighest.addEventListener("touchstart",handlesynthhighest,false);
+        
+        function handlesynthlowest(e){
+            e.preventDefault();
+            myFirebaseRef.push("103");
+            
+        }
+    function handlesynthlow(e){
+        e.preventDefault();
+        myFirebaseRef.push("104");
+        
+    }
+    function handlesynthmidlow(e){
+        e.preventDefault();
+        myFirebaseRef.push("106");
+        
+    }
+    function handlesynthmid(e){
+        e.preventDefault();
+        myFirebaseRef.push("109");
+        
+    }
+    function handlesynthhigh(e){
+        e.preventDefault();
+        myFirebaseRef.push("107");
+        
+    }
+    function handlesynthhighest(e){
+        e.preventDefault();
+        myFirebaseRef.push("108");
+        
+    }
+    
+        </script>
+    
+    
+    <style type="text/css">.myButton {
+        background-color:#ffffff;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:8px;
+        padding:60px 60px;
+        text-decoration:none;
+    }
+    .myButton:hover {
+        background-color:#5cbf2a;
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+    }
+    </style>
+    <style type="text/css">.metr {
+        background-color:#ffffff;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:8px;
+        padding:60px 60px;
+        text-decoration:none;
+    }
+    .metr:hover {
+        background-color:#ffffff;
+    }
+    .metr:active {
+        position:relative;
+        top:1px;
+    }
+    </style>
+    
+    <style type="text/css">.nextButton1 {
+        background-color:#FF8079;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:8px;
+        padding:60px 60px;
+        text-decoration:none;
+    }
+    .nextButton1:hover {
+        background-color:#ffffff;
+    }
+    .nextButton1:active {
+        position:relative;
+        top:1px;
+    }
+    </style>
+    
+    <style type="text/css">.nextButton2 {
+        background-color:#69FFAC;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:8px;
+        padding:60px 60px;
+        text-decoration:none;
+    }
+    .nextButton2:hover {
+        background-color:#ffffff;
+    }
+    .nextButton2:active {
+        position:relative;
+        top:1px;
+    }
+    </style>
+</body></html>

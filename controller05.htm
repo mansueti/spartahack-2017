@@ -1,0 +1,60 @@
+
+<!-- saved from url=(0062)https://shining-inferno-8791.firebaseapp.com/controller05.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+    </head>
+    <body bgcolor="black">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3" name="viewport">
+    <meta content="width=device-width, user-scalable=no" name="viewport">
+     //Kick 1
+                 //Kick 2
+            <table>
+        <tbody>
+            <tr>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller05.html#" id="inception"></a></td><td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller05.html#" id="donald"></a></td></tr>
+        </tbody>
+    </table>
+    <script src="./controller05_files/firebase.js"></script>
+    <script>
+        var myFirebaseRef = new Firebase("https://shining-inferno-8791.firebaseio.com/");
+        var buttonDonald = document.getElementById("donald");
+        var buttonInception = document.getElementById("inception");
+        buttonDonald.addEventListener("touchstart",donald,false);
+        buttonInception.addEventListener("touchstart",inception,false);
+
+        
+        function donald(e){
+            e.preventDefault();
+            myFirebaseRef.push("200");
+            
+        }
+    function inception(e){
+        e.preventDefault();
+        myFirebaseRef.push("201");
+        
+    }
+    
+        </script>
+    
+    
+    <style type="text/css">.myButton {
+        background-color:#ffffff;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:8px;
+        padding:60px 60px;
+        text-decoration:none;
+    }
+    .myButton:hover {
+        background-color:#5cbf2a;
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+    }
+    
+    
+        </style>
+</body></html>

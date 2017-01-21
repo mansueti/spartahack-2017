@@ -1,0 +1,169 @@
+
+<!-- saved from url=(0062)https://shining-inferno-8791.firebaseapp.com/controller02.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+    </head>
+    <body bgcolor="black">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3" name="viewport">
+    <meta content="width=device-width, user-scalable=no" name="viewport">
+    <table>
+        <tbody>
+            <tr>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller02.html#" id="keylowElement"></a></td>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller02.html#" id="keymidElement"></a></td>
+                <td><a class="metr" href="https://shining-inferno-8791.firebaseapp.com/controller02.html#" id="nullid1"></a></td>
+            </tr>
+            <tr>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller02.html#" id="keymidhighElement"></a></td>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller02.html#" id="keyhighElement"></a></td>
+                <td><a class="metr" href="https://shining-inferno-8791.firebaseapp.com/controller02.html#" id="nullid2"></a></td>
+            </tr>
+            <tr>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller02.html#" id="pianohalflow"></a></td>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller02.html#" id="pianohalfmid"></a></td>
+                <td><a class="nextButton1" href="https://shining-inferno-8791.firebaseapp.com/controller01.html" id="controller1"></a></td>
+            </tr>
+            <tr>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller02.html#" id="pianohalfhigh"></a></td>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller02.html#" id="drake"></a></td>
+                <td><a class="nextButton2" href="https://shining-inferno-8791.firebaseapp.com/controller03.html" id="controller2"></a></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="./controller02_files/firebase.js"></script>
+    <script>
+        var myFirebaseRef = new Firebase("https://shining-inferno-8791.firebaseio.com/");
+        var buttonKeylow = document.getElementById("keylowElement");
+        var buttonKeymid = document.getElementById("keymidElement");
+        var buttonKeymidhigh = document.getElementById("keymidhighElement");
+        var buttonKeyhigh = document.getElementById("keyhighElement");
+        var buttonlow = document.getElementById("pianohalflow");
+        var buttonmid = document.getElementById("pianohalfmid");
+        var buttonhigh = document.getElementById("pianohalfhigh");
+        var buttondrake = document.getElementById("drake");
+        buttonKeylow.addEventListener("touchstart",handlekeylow,false);
+        buttonKeymid.addEventListener("touchstart",handlekeymid,false);
+        buttonKeymidhigh.addEventListener("touchstart",handlekeymidhigh,false);
+        buttonKeyhigh.addEventListener("touchstart",handlekeyhigh,false);
+        buttonlow.addEventListener("touchstart",handlelow,false);
+        buttonmid.addEventListener("touchstart",handlemid,false);
+        buttonhigh.addEventListener("touchstart",handlehigh,false);
+        buttondrake.addEventListener("touchstart",handledrake,false);
+        
+    function handlekeylow(e){
+        e.preventDefault();
+        myFirebaseRef.push("97");
+            
+    }
+    function handlekeymid(e){
+        e.preventDefault();
+        myFirebaseRef.push("115");
+        
+    }
+    function handlekeymidhigh(e){
+        e.preventDefault();
+        myFirebaseRef.push("100");
+        
+    }
+    function handlekeyhigh(e){
+        e.preventDefault();
+        myFirebaseRef.push("102");
+        
+    }
+    function handlelow(e){
+        e.preventDefault();
+        myFirebaseRef.push("30");
+    }
+    function handlemid(e){
+        e.preventDefault();
+        myFirebaseRef.push("31");
+    }
+    function handlehigh(e){
+        e.preventDefault();
+        myFirebaseRef.push("32");
+    }
+    function handledrake(e){
+        e.preventDefault();
+        myFirebaseRef.push("6");
+    }
+    
+        </script>
+    
+    
+    <style type="text/css">.myButton {
+        background-color:#ffffff;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:8px;
+        padding:60px 60px;
+        text-decoration:none;
+    }
+    .myButton:hover {
+        background-color:#5cbf2a;
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+    }
+    </style>
+    
+    <style type="text/css">.metr {
+        background-color:#ffffff;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:8px;
+        padding:60px 60px;
+        text-decoration:none;
+    }
+    .metr:hover {
+        background-color:#ffffff;
+    }
+    .metr:active {
+        position:relative;
+        top:1px;
+    }
+    </style>
+    
+    <style type="text/css">.nextButton1 {
+        background-color:#FF8079;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:8px;
+        padding:60px 60px;
+        text-decoration:none;
+    }
+    .nextButton1:hover {
+        background-color:#ffffff;
+    }
+    .nextButton1:active {
+        position:relative;
+        top:1px;
+    }
+    </style>
+    
+    <style type="text/css">.nextButton2 {
+        background-color:#69FFAC;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:8px;
+        padding:60px 60px;
+        text-decoration:none;
+    }
+    .nextButton2:hover {
+        background-color:#ffffff;
+    }
+    .nextButton2:active {
+        position:relative;
+        top:1px;
+    }
+    </style>
+
+</body></html>

@@ -1,0 +1,176 @@
+
+<!-- saved from url=(0062)https://shining-inferno-8791.firebaseapp.com/controller01.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+    </head>
+    <body bgcolor="black">
+    <meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=3" name="viewport">
+    <meta content="width=device-width, user-scalable=no" name="viewport">
+    <table>
+        <tbody>
+            <tr>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller01.html#" id="kick1Element"></a></td> <!--Kick 1-->
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller01.html#" id="kick2Element"></a></td> <!--Kick 2 -->
+                <td><a class="metr" href="https://shining-inferno-8791.firebaseapp.com/controller01.html#" id="metronomeon"></a></td>
+            </tr>
+            <tr>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller01.html#" id="snare1Element"></a></td> <!--Snare-->
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller01.html#" id="clap1Element"></a></td> <!--Clap-->
+                <td><a class="metr" href="https://shining-inferno-8791.firebaseapp.com/controller01.html#" id="metronomepause"></a></td>
+            </tr>
+            <tr>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller01.html#" id="hihatElement"></a></td> <!--HiHat-->
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller01.html#" id="crashElement"></a></td> <!--crash-->
+                <td><a class="nextButton1" href="https://shining-inferno-8791.firebaseapp.com/controller03.html" id="controller2"></a></td>
+            </tr>
+            <tr>
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller01.html#" id="loop1Element"></a></td> <!--loop1-->
+                <td><a class="myButton" href="https://shining-inferno-8791.firebaseapp.com/controller01.html#" id="loop2Element"></a></td> <!--loop2-->
+                <td><a class="nextButton2" href="https://shining-inferno-8791.firebaseapp.com/controller02.html" id="controller2"></a></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="./controller01_files/firebase.js"></script>
+    <script>
+        var myFirebaseRef = new Firebase("https://shining-inferno-8791.firebaseio.com/");
+        var buttonKick1 = document.getElementById("kick1Element");
+        var buttonKick2 = document.getElementById("kick2Element");
+        var buttonSnare1 = document.getElementById("snare1Element");
+        var buttonClap1 = document.getElementById("clap1Element");
+        var buttonHihat = document.getElementById("hihatElement");
+        var buttonCrash = document.getElementById("crashElement");
+        var buttonLoop1 = document.getElementById("loop1Element");
+        var buttonLoop2 = document.getElementById("loop2Element");
+        var buttonmetronome = document.getElementById("metronomeon");
+        buttonKick1.addEventListener("touchstart",handlekick1,false);
+        buttonKick2.addEventListener("touchstart",handlekick2,false);
+        buttonSnare1.addEventListener("touchstart",handlesnare1,false);
+        buttonClap1.addEventListener("touchstart",handleclap1,false);
+        buttonHihat.addEventListener("touchstart",handlehihat,false);
+        buttonCrash.addEventListener("touchstart",handlecrash,false);
+        buttonLoop1.addEventListener("touchstart",handleloop1,false);
+        buttonLoop2.addEventListener("touchstart",handleloop2,false);
+        buttonmetronome.addEventListener("touchstart",handlemetr,false);
+        
+    function handlekick1(e){
+        e.preventDefault();
+        myFirebaseRef.push("113");
+        
+    }
+    function handlekick2(e){
+        e.preventDefault();
+        myFirebaseRef.push("51");
+        
+    }
+    function handlesnare1(e){
+        e.preventDefault();
+        myFirebaseRef.push("50");
+        
+    }
+    function handleclap1(e){
+        e.preventDefault();
+        myFirebaseRef.push("119");
+        
+    }
+    function handlehihat(e){
+        e.preventDefault();
+        myFirebaseRef.push("49");
+        
+    }
+    function handlecrash(e){
+        e.preventDefault();
+        myFirebaseRef.push("101");
+        
+    }
+    function handleloop1(e){
+        e.preventDefault();
+        myFirebaseRef.push("190");
+    }
+    function handleloop2(e){
+        e.preventDefault();
+        myFirebaseRef.push("191");
+    }
+    function handlemetr(e){
+        e.preventDefault();
+        myFirebaseRef.push("1");
+    }
+    
+    </script>
+    
+    
+    <style type="text/css">.myButton {
+        background-color:#ffffff;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:8px;
+        padding:60px 60px;
+        text-decoration:none;
+    }
+    .myButton:hover {
+        background-color:#5cbf2a;
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+    }
+    </style>
+    
+    <style type="text/css">.metr {
+        background-color:#ffffff;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:8px;
+        padding:60px 60px;
+        text-decoration:none;
+    }
+    .metr:hover {
+        background-color:#ffffff;
+    }
+    .metr:active {
+        position:relative;
+        top:1px;
+    }
+    </style>
+    
+    <style type="text/css">.nextButton1 {
+        background-color:#FF8079;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:8px;
+        padding:60px 60px;
+        text-decoration:none;
+    }
+    .nextButton1:hover {
+        background-color:#ffffff;
+    }
+    .nextButton1:active {
+        position:relative;
+        top:1px;
+    }
+    </style>
+    
+    <style type="text/css">.nextButton2 {
+        background-color:#69FFAC;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:8px;
+        padding:60px 60px;
+        text-decoration:none;
+    }
+    .nextButton2:hover {
+        background-color:#ffffff;
+    }
+    .nextButton2:active {
+        position:relative;
+        top:1px;
+    }
+    </style>
+</body></html>
