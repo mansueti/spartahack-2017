@@ -1,3 +1,5 @@
+
+<body onload="ViewLobbys()">
 <input id="button" type="submit" name="button" onclick="CreateLobby()" href="http://www.w3schools.com/html/" value="CreateLobby"/>
 <input id="button" type="submit" name="button" onclick="RemoveLobby()" value="RemoveLobby"/>
 
@@ -8,23 +10,46 @@
 <input id="button5" type="submit" name="button" onclick="CreateLobby()" value="Play5"/>
 <input id="button6" type="submit" name="button" onclick="ReadData()" value="Play6"/>
 
+<style>
+	.lobby {
+height: 50px;
+width: 100px;
+line-height: 50px;
+padding-right: 30px;
+padding-left: 20px;
+font-size: 1em;
+background-color:rgb(41,127,184);
+color:rgb(255,255,255);
+text-decoration: none;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 15px;
+border-radius: 10px;
+	}
+</style>
+<br><br>
+<div id="lobbies"> </div>
+
 <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
 <script>
-
+	var numLobbies = 0;
 	function ViewLobbys()
 	{
 		firebaseDB.on("value", function(snapshot) {
+			document.getElementById('lobbies').innerHTML = "";
 			for (item in snapshot.val())
 			{
-				document.body.innerHTML = "<div> Lobby " + item + " </div>";
+				document.getElementById('lobbies').innerHTML += "<div class='lobby' >" + item + "  <button id="+item+" onclick='RemoveLobby(this.id)'> X </button></div>";
+				numLobbies++;
 			}
-		   
+			console.log(numLobbies);
+
 		}, function (error) {
 		   console.log("Error: " + error.code);
 		});
 	}
 
-	setInterval(ViewLobbys, 1000);
+	setInterval(ViewLobbys, 5000);
 
   // Initialize Firebase
   var config = {
@@ -37,7 +62,7 @@
   firebase.initializeApp(config);
   var firebaseDB = firebase.database().ref();
 
-  var numLobbies = 0;
+
 
 </script>
 
@@ -76,8 +101,10 @@
 	numLobbies = numLobbies + 1;
 	}
 	**/
-	function RemoveLobby(){
-		firebaseDB.remove();
+	function RemoveLobby(id){
+		// numLobbies = 0;
+		var reference = firebase.database().ref(id);
+		reference.remove();
 	}
 	/**
 	function ReadData(){
@@ -89,3 +116,4 @@
 	}
 	**/
 </script>
+</body>
