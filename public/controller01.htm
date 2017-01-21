@@ -14,40 +14,40 @@
       <div class="col-md-4 text-center">
         <div class="row">
             <h1> Vocals </h1>
-            <a class="myButton" href="#" id="kick1Element" onclick="toggleColor(this.id)"></a> <!--Kick 1-->
-            <a class="myButton" href="#" id="kick2Element" onclick="toggleColor(this.id)"></a><!--Kick 2 -->
-            <a class="myButton" href="#" id="metronomeon" onclick="toggleColor(this.id)"></a>
+            <a class="myButton" href="#" id="kick1Element" onclick="toggleColor(this.id); console.log(1);"></a> <!--Kick 1-->
+            <a class="myButton" href="#" id="kick2Element" onclick="toggleColor(this.id); console.log(2);"></a><!--Kick 2 -->
+            <a class="myButton" href="#" id="metronomeon" onclick="toggleColor(this.id); console.log(3);"></a>
         </div>
         <div class="row">
-            <a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id)"></a> <!--Snare-->
-            <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id)"></a> <!--Clap-->
-            <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id)"></a>
+            <a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id); console.log(4);"></a> <!--Snare-->
+            <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id); console.log(5);"></a> <!--Clap-->
+            <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id); console.log(6);"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="row">
           <h1> Drums </h1>
-            <a class="myButton" href="#" id="kick1Element" onclick="toggleColor(this.id)"></a> <!--Kick 1-->
-            <a class="myButton" href="#" id="kick2Element" onclick="toggleColor(this.id)"></a><!--Kick 2 -->
-            <a class="myButton" href="#" id="metronomeon" onclick="toggleColor(this.id)"></a>
+            <a class="myButton" href="#" id="bass1_4" onclick="toggleColor(this.id); handledrum0();"></a> <!--Kick 1-->
+            <a class="myButton" href="#" id="cymbal_0" onclick="toggleColor(this.id); handledrum1();"></a><!--Kick 2 -->
+            <a class="myButton" href="#" id="drum_4" onclick="toggleColor(this.id); handledrum2();"></a>
         </div>
         <div class="row">
-            <a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id)"></a> <!--Snare-->
-            <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id)"></a> <!--Clap-->
-            <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id)"></a>
+            <a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id); console.log(10);"></a> <!--Snare-->
+            <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id); console.log(11);"></a> <!--Clap-->
+            <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id); console.log(12);"></a>
         </div>
       </div>
       <div class="col-md-4">
         <div class="row">
           <h1> Bass </h1>
-            <a class="myButton" href="#" id="kick1Element" onclick="toggleColor(this.id)"></a> <!--Kick 1-->
-            <a class="myButton" href="#" id="kick2Element" onclick="toggleColor(this.id)"></a><!--Kick 2 -->
-            <a class="myButton" href="#" id="metronomeon" onclick="toggleColor(this.id)"></a>
+            <a class="myButton" href="#" id="kick1Element" onclick="toggleColor(this.id); handlechords8();"></a> <!--Kick 1-->
+            <a class="myButton" href="#" id="kick2Element" onclick="toggleColor(this.id); console.log(14);"></a><!--Kick 2 -->
+            <a class="myButton" href="#" id="metronomeon" onclick="toggleColor(this.id); console.log(15);"></a>
         </div>
         <div class="row">
-            <a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id)"></a> <!--Snare-->
-            <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id)"></a> <!--Clap-->
-            <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id)"></a>
+            <a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id); console.log(16);"></a> <!--Snare-->
+            <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id); console.log(17);"></a> <!--Clap-->
+            <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id); console.log(18);"></a>
         </div>
       </div>
 
@@ -68,45 +68,43 @@
       firebase.initializeApp(config);
     </script>
     <script>
-        var database = firebase.database();
+        var database = firebase.database().ref();
         // var myFirebaseRef = new Firebase("https://spartahack-2017.firebaseio.com/");
-        var buttonKick1 = document.getElementById("kick1Element");
-        var buttonKick2 = document.getElementById("kick2Element");
-        var buttonSnare1 = document.getElementById("snare1Element");
+        var buttonDrum0 = document.getElementById("bass1_4");
+        var buttonDrum1 = document.getElementById("cymbal_4");
+        var buttonDrum2 = document.getElementById("drum_4");
+        var chords_8 = document.getElementById("chords_8");
         var buttonClap1 = document.getElementById("clap1Element");
         var buttonHihat = document.getElementById("hihatElement");
         var buttonCrash = document.getElementById("crashElement");
         var buttonLoop1 = document.getElementById("loop1Element");
         var buttonLoop2 = document.getElementById("loop2Element");
         var buttonmetronome = document.getElementById("metronomeon");
-        buttonKick1.addEventListener("touchstart",handlekick1,false);
-        buttonKick2.addEventListener("touchstart",handlekick2,false);
-        buttonSnare1.addEventListener("touchstart",handlesnare1,false);
-        buttonClap1.addEventListener("touchstart",handleclap1,false);
-        buttonHihat.addEventListener("touchstart",handlehihat,false);
-        buttonCrash.addEventListener("touchstart",handlecrash,false);
-        buttonLoop1.addEventListener("touchstart",handleloop1,false);
-        buttonLoop2.addEventListener("touchstart",handleloop2,false);
-        buttonmetronome.addEventListener("touchstart",handlemetr,false);
+        buttonDrum0.addEventListener("touchstart",handledrum0,false);
+        buttonDrum1.addEventListener("touchstart",handledrum1,false);
+        buttonDrum2.addEventListener("touchstart",handledrum2,false);
 
-    function handlekick1(){
-        // e.preventDefault();
-        database.ref().push("120");
-        // myFirebaseRef.push("113");
+
+    function handledrum0(e){
+        //e.preventDefault();
+        database.push("1");
+
 
     }
-    function handlekick2(e){
-        e.preventDefault();
-        // myFirebaseRef.push("51");
+    function handledrum1(e){
+        //e.preventDefault();
+        database.push("2");
+
 
     }
-    function handlesnare1(e){
-        e.preventDefault();
-        // myFirebaseRef.push("50");
+    function handledrum2(e){
+        //e.preventDefault();
+        database.push("3");
 
     }
-    function handleclap1(e){
-        e.preventDefault();
+    function handlechords8(e){
+        //e.preventDefault();
+        database.push("4");
         // myFirebaseRef.push("119");
 
     }

@@ -1,31 +1,6 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-
-    <!-- Basic Page Needs
-     �������������������������������������������������� -->
-    <meta charset="utf-8">
-        <title>FriendKeys</title>
-        <meta name="description" content="">
-            <meta name="author" content="">
-
-                <!-- Mobile Specific Metas
-                 �������������������������������������������������� -->
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-
-                    <!-- FONT
-                     �������������������������������������������������� -->
-
-
-                        <!-- CSS
-                         �������������������������������������������������� -->
-
-                                <!-- Favicon
-                                 �������������������������������������������������� -->
-                                <link rel="icon" type="image/png" href="libs/Skeleton-2.0.4/images/favicon.jpg">
-
-</head>
 <body>
     <!-- Primary Page Layout
      �������������������������������������������������� -->
@@ -44,30 +19,14 @@
         <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
         <script>
-            var clap = new Howl({urls: ['clap.wav']});
-            var snare = new Howl({urls: ['snare.mp3']});
-            var kick1 = new Howl({urls: ['kick_1.mp3']});
-            var kick2 = new Howl({urls: ['kick_2.mp3']});
-            var crash = new Howl({urls: ['crash.mp3']});
-            var hihat = new Howl({urls: ['/sounds/clap.wav']});
-            var key_low = new Howl({urls: ['key_low.mp3']});
-            var key_mid = new Howl({urls: ['key_mid.mp3']});
-            var key_midhigh = new Howl({urls: ['key_midhigh.mp3']});
-            var key_high = new Howl({urls: ['key_high.mp3']});
-            var synth1_lowest = new Howl({urls: ['synth1_lowest.mp3']});
-            var synth1_low = new Howl({urls: ['synth1_low.mp3']});
-            var synth1_midlow = new Howl({urls: ['synth1_midlow.mp3']});
-            var synth1_mid = new Howl({urls: ['synth1_mid.mp3']});
-            var synth1_high= new Howl({urls: ['synth1_high.mp3']});
-            var synth1_highest = new Howl({urls: ['synth1_highest.mp3']});
-            var loop1 = new Howl({urls: ['4_beat_120bpm.mp3']});
-            var loop2 = new Howl({urls: ['4_beat_clap_120.mp3']});
-            var inception = new Howl({urls: ['inceptionbutton.mp3']});
-            var donald = new Howl({urls: ['build_that_wall.mp3']});
-            var pianohalflow = new Howl({urls: ['2low.mp3']});
-            var pianohalfmid = new Howl({urls: ['2mid.mp3']});
-            var pianohalfhigh = new Howl({urls: ['2high.mp3']});
-            var drakeohyah = new Howl({urls: ['drake_yeah.mp3']});
+            var bass1_4 = new Howl({urls: ['/sounds/bass1_4.wav'],
+                                    loop: true});
+            var cymbal_4 = new Howl({urls: ['/sounds/cymbal_4.wav'],
+                                    loop: true});
+            var drum_4 = new Howl({urls: ['/sounds/drum_4.wav'],
+                                    loop: true});
+            var chords_8 = new Howl({urls: ['/sounds/chords_8.wav'],
+                                    loop: true});
 
             var myFirebaseRef = new Firebase("https://spartahack-2017.firebaseio.com/");
 
@@ -75,18 +34,18 @@
 
             myFirebaseRef.on("child_added",function(soundback){
                              var soundid = soundback.val();
-                             if (soundid == "120") {      //1 is linked to hi-hat (49 keycode)
-                             hihat.play();
+                             if (soundid == "1") {      //1 is linked to hi-hat (49 keycode)
+                             bass1_4.play();
                              }
-                             else if (soundid == "113"){   //Q is linked to kick1 (113 keycode)
-                             kick1.play();
+                             else if (soundid == "2"){   //Q is linked to kick1 (113 keycode)
+                             cymbal_4.play();
                              }
-                             else if (soundid == "50") {//2 is linked to snare (50 keycode)
-                             snare.play();
+                             else if (soundid == "3") {//2 is linked to snare (50 keycode)
+                             drum_4.play();
 
                              }
-                             else if (soundid == "51"){   //3 is linked to kick2 (51 keycode)
-                             kick2.play();
+                             else if (soundid == "4"){   //3 is linked to kick2 (51 keycode)
+                             chords_8.play();
                              }
                              else if (soundid == "119") {//w is linked to clap (119 keycode)
                              clap.play();
