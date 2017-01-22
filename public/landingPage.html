@@ -1,6 +1,9 @@
 
 <body onload="ViewLobbys()">
 <input id="button" type="submit" name="button" onclick="CreateLobby()" href="http://www.w3schools.com/html/" value="CreateLobby"/>
+<script>
+document.getElementById('button').onclick="location.href='/controller01.htm'";
+</script>
 <input id="button" type="submit" name="button" onclick="RemoveLobby()" value="RemoveLobby"/>
 
 <input id="button1" type="submit" name="button" onclick="CreateLobby()" value="Play1"/>
@@ -39,10 +42,12 @@ border-radius: 10px;
 			document.getElementById('lobbies').innerHTML = "";
 			for (item in snapshot.val())
 			{
+				if (item.charAt(0) == "T")
+				{
 				document.getElementById('lobbies').innerHTML += "<div class='lobby' >" + item + "  <button id="+item+" onclick='RemoveLobby(this.id)'> X </button></div>";
-				numLobbies++;
+				}
 			}
-			console.log(numLobbies);
+			//console.log(numLobbies);
 
 		}, function (error) {
 		   console.log("Error: " + error.code);

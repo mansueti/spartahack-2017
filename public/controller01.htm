@@ -204,13 +204,6 @@
 
 
 
-
-
-
-
-
-
-
     // function handlecrash(e){
     //     e.preventDefault();
     //     // myFirebaseRef.push("101");
@@ -297,18 +290,29 @@
         setInterval(function () {
             for (item in ids) {
                 item = ids[item];
-                var number = parseInt(item);
+                var number = parseInt(item-1);
                 samples[number].play();
-                // console.log(number);
-
+                holdingIds.push(item);
+            }
                 ids = [];
-                }
+
             }, 4000);
 
-        var ids = []
+        var ids = [];
+        var holdingIds = [];
         myFirebaseRef.on("child_added",function(soundback){
                          var soundid = soundback.val();
-                         ids.push(soundid);
+                         if (samples[soundid-1]._playStart > 0)
+                         {
+                            console.log(samples[soundid-1]);
+                            samples[soundid-1].stop();
+                            samples[soundid-1]._playStart = 0;
+                            console.log(samples[soundid-1]);
+                         }
+                         else
+                         {
+                            ids.push(soundid);  
+                         }
                          soundback.ref().remove();//remove child from node
                          });
 
