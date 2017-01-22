@@ -18,41 +18,41 @@
       <div class="col-md-4 text-center button"><br><br><br>
         <div class="row" >
             <h1 class="label"> Vocals </h1><br><br>
-            <a class="myButton" href="#" id="kick1Element" onclick="toggleColor(this.id); console.log(1);"></a> <!--Kick 1-->
-            <a class="myButton" href="#" id="kick2Element" onclick="toggleColor(this.id); console.log(2);"></a><!--Kick 2 -->
-            <a class="myButton" href="#" id="metronomeon" onclick="toggleColor(this.id); console.log(3);"></a>
+            <a class="myButton" href="#" id="vocal1_4" onclick="toggleColor(this.id); handlevocal1();"></a> <!--Kick 1-->
+            <a class="myButton" href="#" id="vocal2_8" onclick="toggleColor(this.id); handlevocal2();"></a><!--Kick 2 -->
+            <a class="myButton" href="#" id="vocal3_8" onclick="toggleColor(this.id); handlevocal3();"></a>
         </div>
         <div class="row">
-            <a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id); console.log(4);"></a> <!--Snare-->
-            <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id); console.log(5);"></a> <!--Clap-->
-            <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id); console.log(6);"></a>
+            <a class="myButton" href="#" id="vocal4_8" onclick="toggleColor(this.id); handlevocal4();"></a> <!--Snare-->
+            <a class="myButton" href="#" id="vocal5_8" onclick="toggleColor(this.id); handlevocal5();"></a> <!--Clap-->
+            <a class="myButton" href="#" id="vocal6" onclick="toggleColor(this.id); console.log(6);"></a>
         </div>
         <br><br><br>
       </div>
       <div class="col-md-4 button"><br><br><br>
         <div class="row">
           <h1 class="label"> Drums </h1><br><br>
-            <a class="myButton" href="#" id="bass1_4" onclick="toggleColor(this.id); handledrum0();"></a> <!--Kick 1-->
-            <a class="myButton" href="#" id="cymbal_0" onclick="toggleColor(this.id); handledrum1();"></a><!--Kick 2 -->
-            <a class="myButton" href="#" id="drum_4" onclick="toggleColor(this.id); handledrum2();"></a>
+            <a class="myButton" href="#" id="drum1_4" onclick="toggleColor(this.id); handledrum1();"></a> <!--Kick 1-->
+            <a class="myButton" href="#" id="drum2_4" onclick="toggleColor(this.id); handledrum2();"></a><!--Kick 2 -->
+            <a class="myButton" href="#" id="drum3_4" onclick="toggleColor(this.id); handledrum3();"></a>
         </div>
         <div class="row">
-            <a class="myButton" href="#" id="vocal_8" onclick="toggleColor(this.id); handledrum3();"></a> <!--Snare-->
-            <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id); console.log(11);"></a> <!--Clap-->
-            <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id); console.log(12);"></a>
+            <a class="myButton" href="#" id="drum4_8" onclick="toggleColor(this.id); handledrum4();"></a> <!--Snare-->
+            <a class="myButton" href="#" id="drum5_8" onclick="toggleColor(this.id); handledrum5();"></a> <!--Clap-->
+            <a class="myButton" href="#" id="drum6" onclick="toggleColor(this.id); handledrum6(12);"></a>
         </div><br><br><br>
       </div>
       <div class="col-md-4 button"><br><br><br>
         <div class="row">
-          <h1 class="label"> Bass </h1><br><br>
-            <a class="myButton" href="#" id="kick1Element" onclick="toggleColor(this.id); handlechords8();"></a> <!--Kick 1-->
-            <a class="myButton" href="#" id="kick2Element" onclick="toggleColor(this.id); console.log(14);"></a><!--Kick 2 -->
-            <a class="myButton" href="#" id="metronomeon" onclick="toggleColor(this.id); console.log(15);"></a>
+          <h1 class="label"> Instruments </h1><br><br>
+            <a class="myButton" href="#" id="instrument1_8" onclick="toggleColor(this.id); handleinstrument1();"></a> <!--Kick 1-->
+            <a class="myButton" href="#" id="instrument2_8" onclick="toggleColor(this.id); handleinstrument2();"></a><!--Kick 2 -->
+            <a class="myButton" href="#" id="instrument3_8" onclick="toggleColor(this.id); handleinstrument3();"></a>
         </div>
         <div class="row">
-            <a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id); console.log(16);"></a> <!--Snare-->
-            <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id); console.log(17);"></a> <!--Clap-->
-            <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id); console.log(18);"></a>
+            <a class="myButton" href="#" id="instrument4_8" onclick="toggleColor(this.id); handleinstrument4();"></a> <!--Snare-->
+            <a class="myButton" href="#" id="instrument5_4" onclick="toggleColor(this.id); handleinstrument5();"></a> <!--Clap-->
+            <a class="myButton" href="#" id="instrument6" onclick="toggleColor(this.id); handleinstrument();"></a>
         </div><br><br><br>
       </div>
 
@@ -75,13 +75,21 @@
     </script>
     <script>
         var database = firebase.database().ref();
-        // var myFirebaseRef = new Firebase("https://spartahack-2017.firebaseio.com/");
-        var buttonDrum0 = document.getElementById("bass1_4");
-        var buttonDrum1 = document.getElementById("cymbal_4");
-        var buttonDrum2 = document.getElementById("drum_4");
-        var chords_8 = document.getElementById("chords_8");
-        // var buttonClap1 = document.getElementById("clap1Element");
-        var buttonDrum3 = document.getElementById("vocal_8");
+        var buttonDrum1 = document.getElementById("drum1_4.wav");
+        var buttonDrum2 = document.getElementById("drum2_4.wav");
+        var buttonDrum3 = document.getElementById("drum3_4.wav");
+        var buttonDrum4 = document.getElementById("drum4_8.wav");
+        var buttonDrum5 = document.getElementById("drum5_8.wav");
+        var buttonVocal1 = document.getElementById("vocal1_4.wav");
+        var buttonVocal2 = document.getElementById("vocal2_8.wav");
+        var buttonVocal3 = document.getElementById("vocal3_8.wav");
+        var buttonVocal4 = document.getElementById("vocal4_8.wav");
+        var buttonVocal5 = document.getElementById("vocal5_8.wav");
+        var buttonInstrument1 = document.getElementById("instrument1_8.wav");
+        var buttonInstrument2 = document.getElementById("instrument2_8.wav");
+        var buttonInstrument3 = document.getElementById("instrument3_8.wav");
+        var buttonInstrumentm4 = document.getElementById("instrument4_8.wav");
+        var buttonInstrument5 = document.getElementById("instrument5_4.wav");
         // var buttonCrash = document.getElementById("crashElement");
         // var buttonLoop1 = document.getElementById("loop1Element");
         // var buttonLoop2 = document.getElementById("loop2Element");
@@ -91,34 +99,115 @@
         // buttonDrum2.addEventListener("touchstart",handledrum2,false);
 
 
-    function handledrum0(e){
+    function handledrum1(e){
         //e.preventDefault();
         database.push("1");
 
 
     }
-    function handledrum1(e){
+    function handledrum2(e){
         //e.preventDefault();
         database.push("2");
 
 
     }
-    function handledrum2(e){
+    function handledrum3(e){
         //e.preventDefault();
         database.push("3");
 
     }
-    function handlechords8(e){
+    function handledrum4(e){
         //e.preventDefault();
         database.push("4");
         // myFirebaseRef.push("119");
 
     }
-    function handledrum3(e){
+    function handledrum5(e){
         // e.preventDefault();
         database.push("5");
 
     }
+
+    function handledrum6(e){
+        //e.preventDefault();
+        database.push("6");
+
+
+    }
+    function handleinstrument1(e){
+        //e.preventDefault();
+        database.push("7");
+
+
+    }
+    function handleinstrument2(e){
+        //e.preventDefault();
+        database.push("8");
+
+    }
+    function handleinstrument3(e){
+        //e.preventDefault();
+        database.push("9");
+        // myFirebaseRef.push("119");
+
+    }
+    function hhandleinstrument4(e){
+        // e.preventDefault();
+        database.push("10");
+
+    }
+
+    function handleinstrument5(e){
+        //e.preventDefault();
+        database.push("11");
+
+
+    }
+    function handleinstrument6(e){
+        //e.preventDefault();
+        database.push("12");
+
+
+    }
+    function handlevocal1(e){
+        //e.preventDefault();
+        database.push("13");
+
+    }
+    function handlevocal2(e){
+        //e.preventDefault();
+        database.push("14");
+
+    }function handlevocal3(e){
+        //e.preventDefault();
+        database.push("15");
+
+    }function handlevocal4(e){
+        //e.preventDefault();
+        database.push("16");
+
+    }function handlevocal5(e){
+        //e.preventDefault();
+        database.push("17");
+
+    }function handlevocal6(e){
+        //e.preventDefault();
+        database.push("18");
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     // function handlecrash(e){
     //     e.preventDefault();
     //     // myFirebaseRef.push("101");
@@ -204,12 +293,12 @@
                     drum1_4.play();
                 }
                 else if (item == "2"){   //Q is linked to kick1 (113 keycode)
-                    instrument3_8.play();
+                    drum2_4.play();
                 }
                 else if (item == "3") {//2 is linked to snare (50 keycode)
                     drum3_4.play();
                 }
-                else if (item == "10"){   //3 is linked to kick2 (51 keycode)
+                else if (item == "4"){   //3 is linked to kick2 (51 keycode)
                     drum4_8.play();
                 }
                 else if (item == "5"){   //3 is linked to kick2 (51 keycode)
@@ -227,7 +316,7 @@
                 else if (item == "9"){   //3 is linked to kick2 (51 keycode)
                     instrument3_8.play();
                 }
-                else if (item == "4"){
+                else if (item == "10"){
                     instrument4_8.play();
                 }
                 else if (item == "11"){

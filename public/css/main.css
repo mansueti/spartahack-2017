@@ -1,7 +1,7 @@
 body {
   margin: 0 auto 0 auto;
   text-align: center;
-  background: url('../bg.gif');
+  background: url('/images/bgfixed.gif');
   background-repeat: no-repeat;
   background-position: center;
   background-color: #141414;
