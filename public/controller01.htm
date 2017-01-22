@@ -6,14 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta content="width=device-width, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <link rel="stylesheet" href="css/main.css">
+   <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
   <title>spartahack-2017</title>
   </head>
-  <body style="background-color: black">
+  <body>
 
-    <div class="row" style="text-align:center">
-      <div class="col-md-4 text-center">
-        <div class="row">
-            <h1> Vocals </h1>
+
+	<div class="container">
+    <div class="row allbuttons" style="text-align:center">
+      <div class="col-md-4 text-center button"><br><br><br>
+        <div class="row" >
+            <h1 class="label"> Vocals </h1><br><br>
             <a class="myButton" href="#" id="kick1Element" onclick="toggleColor(this.id); console.log(1);"></a> <!--Kick 1-->
             <a class="myButton" href="#" id="kick2Element" onclick="toggleColor(this.id); console.log(2);"></a><!--Kick 2 -->
             <a class="myButton" href="#" id="metronomeon" onclick="toggleColor(this.id); console.log(3);"></a>
@@ -23,10 +27,11 @@
             <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id); console.log(5);"></a> <!--Clap-->
             <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id); console.log(6);"></a>
         </div>
+        <br><br><br>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 button"><br><br><br>
         <div class="row">
-          <h1> Drums </h1>
+          <h1 class="label"> Drums </h1><br><br>
             <a class="myButton" href="#" id="bass1_4" onclick="toggleColor(this.id); handledrum0();"></a> <!--Kick 1-->
             <a class="myButton" href="#" id="cymbal_0" onclick="toggleColor(this.id); handledrum1();"></a><!--Kick 2 -->
             <a class="myButton" href="#" id="drum_4" onclick="toggleColor(this.id); handledrum2();"></a>
@@ -35,11 +40,11 @@
             <a class="myButton" href="#" id="vocal_8" onclick="toggleColor(this.id); handledrum3();"></a> <!--Snare-->
             <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id); console.log(11);"></a> <!--Clap-->
             <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id); console.log(12);"></a>
-        </div>
+        </div><br><br><br>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 button"><br><br><br>
         <div class="row">
-          <h1> Bass </h1>
+          <h1 class="label"> Bass </h1><br><br>
             <a class="myButton" href="#" id="kick1Element" onclick="toggleColor(this.id); handlechords8();"></a> <!--Kick 1-->
             <a class="myButton" href="#" id="kick2Element" onclick="toggleColor(this.id); console.log(14);"></a><!--Kick 2 -->
             <a class="myButton" href="#" id="metronomeon" onclick="toggleColor(this.id); console.log(15);"></a>
@@ -48,11 +53,12 @@
             <a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id); console.log(16);"></a> <!--Snare-->
             <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id); console.log(17);"></a> <!--Clap-->
             <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id); console.log(18);"></a>
-        </div>
+        </div><br><br><br>
       </div>
 
 
     </div>
+	</div>
 
     <script src="/howlerconfig/howler.js-master/dist/howler.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
@@ -145,44 +151,7 @@
 
 
     <style type="text/css">
-    .myButton {
-        background-color:#ffffff;
-        display:inline-block;
-        cursor:pointer;
-        color:#ffffff;
-        font-family:Arial;
-        font-size:8px;
-        padding:60px 60px;
-        border-radius: 10px;
-        border-width: 2px;
-        text-shadow: : 50px;
-        /*text-decoration:none;*/
-    }
-    .myButton:hover {
-      /* IE10+ */
-      background-image: -ms-radial-gradient(center, ellipse farthest-corner, #FFFFFF -30%, #2CB831 100%);
 
-      /* Mozilla Firefox */
-      background-image: -moz-radial-gradient(center, ellipse farthest-corner, #FFFFFF -30%, #2CB831 100%);
-
-      /* Opera */
-      background-image: -o-radial-gradient(center, ellipse farthest-corner, #FFFFFF -30%, #2CB831 100%);
-
-      /* Webkit (Safari/Chrome 10) */
-      background-image: -webkit-gradient(radial, center center, 0, center center, 286, color-stop(-30, #FFFFFF), color-stop(100, #2CB831));
-
-      /* Webkit (Chrome 11+) */
-      background-image: -webkit-radial-gradient(center, ellipse farthest-corner, #FFFFFF -30%, #2CB831 100%);
-
-      /* W3C Markup */
-      background-image: radial-gradient(ellipse farthest-corner at center, #FFFFFF -30%, #2CB831 100%);
-
-        /*background-color:#5cbf2a;*/
-    }
-    .myButton:active {
-        position:relative;
-        top:1px;
-    }
     </style>
 <!--
     <style type="text/css">.metr {
