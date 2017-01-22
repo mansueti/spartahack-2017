@@ -148,69 +148,123 @@
       // this.style.background = #000000;
     }
     </script>
+    <script type="text/javascript" src="libs/library/howler.js"></script>
+    <script type="text/javascript" src="libs/library/howler.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
 
-    <style type="text/css">
+    <script>
+        // firebase database refernce
+        var myFirebaseRef = new Firebase("https://spartahack-2017.firebaseio.com/");
 
-    </style>
-<!--
-    <style type="text/css">.metr {
-        background-color:#ffffff;
-        display:inline-block;
-        cursor:pointer;
-        color:#ffffff;
-        font-family:Arial;
-        font-size:8px;
-        padding:60px 60px;
-        border-radius: 10px;
-        text-decoration:none;
-    }
-    .metr:hover {
-        background-color:#ffffff;
-    }
-    .metr:active {
-        position:relative;
-        top:1px;
-    }
-    </style>
 
-    <style type="text/css">.nextButton1 {
-        background-color:#FF8079;
-        display:inline-block;
-        cursor:pointer;
-        color:#ffffff;
-        font-family:Arial;
-        font-size:8px;
-        padding:60px 60px;
-        border-radius: 10px;
-        text-decoration:none;
-    }
-    .nextButton1:hover {
-        background-color:#ffffff;
-    }
-    .nextButton1:active {
-        position:relative;
-        top:1px;
-    }
-    </style>
+        var drum1_4 = new Howl({urls: ['/sounds/drum1_4.wav'],
+                                loop: true});
+        var drum2_4 = new Howl({urls: ['/sounds/drum2_4.wav'],
+                                loop: true});
+        var drum3_4 = new Howl({urls: ['/sounds/drum3_4.wav'],
+                                loop: true});
+        var drum4_8 = new Howl({urls: ['/sounds/drum4_8.wav'],
+                                loop: false});
+        var drum5_8 = new Howl({urls: ['/sounds/drum5_8.wav'],
+                                loop: false});
 
-    <style type="text/css">.nextButton2 {
-        background-color:#69FFAC;
-        display:inline-block;
-        cursor:pointer;
-        color:#ffffff;
-        font-family:Arial;
-        font-size:8px;
-        padding:60px 60px;
-        border-radius: 10px;
-        text-decoration:none;
-    }
-    .nextButton2:hover {
-        background-color:#ffffff;
-    }
-    .nextButton2:active {
-        position:relative;
-        top:1px;
-    }
-    </style> -->
+        var instrument1_8 = new Howl({urls: ['/sounds/instrument1_8.wav'],
+                                loop: false});
+        var instrument2_8 = new Howl({urls: ['/sounds/instrument2_8.wav'],
+                                loop: false});
+        var instrument3_8 = new Howl({urls: ['/sounds/instrument3_8.wav'],
+                                loop: false});
+        var instrument4_8 = new Howl({urls: ['/sounds/instrument4_8.wav'],
+                                loop: false});
+        var instrument5_4 = new Howl({urls: ['/sounds/instrument5_4.wav'],
+                                loop: true});
+
+        var vocal1_4 = new Howl({urls: ['/sounds/vocal1_4.wav'],
+                                loop: true});
+        var vocal2_8 = new Howl({urls: ['/sounds/vocal2_8.wav'],
+                                loop: false});
+        var vocal3_8 = new Howl({urls: ['/sounds/vocal3_8.wav'],
+                                loop: false});
+        var vocal4_8 = new Howl({urls: ['/sounds/vocal4_8.wav'],
+                                loop: false});
+        var vocal5_8 = new Howl({urls: ['/sounds/vocal5_8.wav'],
+                                loop: false});
+
+
+
+        var looping = false;
+
+        setInterval(function () {
+            for (item in ids) {
+                item = ids[item];
+                console.log(item);
+
+                if (item == "1") {      //1 is linked to hi-hat (49 keycode)
+                    drum1_4.play();
+                }
+                else if (item == "2"){   //Q is linked to kick1 (113 keycode)
+                    instrument3_8.play();
+                }
+                else if (item == "3") {//2 is linked to snare (50 keycode)
+                    drum3_4.play();
+                }
+                else if (item == "10"){   //3 is linked to kick2 (51 keycode)
+                    drum4_8.play();
+                }
+                else if (item == "5"){   //3 is linked to kick2 (51 keycode)
+                    drum5_8.play();
+                }
+                else if (item == "6"){   //Q is linked to kick1 (113 keycode)
+                    //instrument1_8.play();
+                }
+                else if (item == "7") {//2 is linked to snare (50 keycode)
+                    instrument1_8.play();
+                }
+                else if (item == "8"){   //3 is linked to kick2 (51 keycode)
+                    instrument2_8.play();
+                }
+                else if (item == "9"){   //3 is linked to kick2 (51 keycode)
+                    instrument3_8.play();
+                }
+                else if (item == "4"){
+                    instrument4_8.play();
+                }
+                else if (item == "11"){
+                    instrument5_4.play();
+                }
+                else if (item == "12"){
+                    //instrument4_8.play();
+                }
+                else if (item == "13") {//2 is linked to snare (50 keycode)
+                    vocal1_4.play();
+                }
+                else if (item == "14"){   //3 is linked to kick2 (51 keycode)
+                    vocal2_8.play();
+                }
+                else if (item == "15"){   //3 is linked to kick2 (51 keycode)
+                    vocal3_8.play();
+                }
+                else if (item == "16"){
+                    vocal4_8.play();
+                }
+                else if (item == "17"){
+                    vocal5_8.play();
+                }
+                else if (item == "18"){
+                    //vocal6.play();
+                }
+                    ids = [];
+                }
+            }, 4000);
+
+        var ids = []
+        myFirebaseRef.on("child_added",function(soundback){
+                         var soundid = soundback.val();
+                         ids.push(soundid);
+                        //  soundback.ref().remove();//remove child from node
+                         });
+
+        </script>
+
 </body></html>
