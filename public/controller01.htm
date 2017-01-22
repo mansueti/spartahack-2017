@@ -44,7 +44,7 @@
       </div>
       <div class="col-md-4 button"><br><br><br>
         <div class="row">
-          <h1 class="label"> Instruments </h1><br><br>
+          <h1 class="label"> Swag </h1><br><br>
             <a class="myButton" id="7" onclick="  handleinstrument1();"></a> <!--Kick 1-->
             <a class="myButton" id="8" onclick="  handleinstrument2();"></a><!--Kick 2 -->
             <a class="myButton"  id="9" onclick="  handleinstrument3();"></a>
@@ -154,7 +154,7 @@
         // myFirebaseRef.push("119");
 
     }
-    function hhandleinstrument4(e){
+    function handleinstrument4(e){
         // e.preventDefault();
         database.push("10");
 
@@ -291,8 +291,12 @@
             for (item in ids) {
                 item = ids[item];
                 var number = parseInt(item-1);
-                samples[number].play();
-                holdingIds.push(item);
+                if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+
+                } else {
+                  samples[number].play();
+              }
+
             }
                 ids = [];
 
