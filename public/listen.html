@@ -11,164 +11,121 @@
 <p id="demo"></p>
 
 
-
-          <script type="text/javascript" src="libs/library/howler.js"></script>
+        <!-- Included libraries -->
+        <script type="text/javascript" src="libs/library/howler.js"></script>
         <script type="text/javascript" src="libs/library/howler.min.js"></script>
-
-
         <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
-        <script>
-            var bass1_4 = new Howl({urls: ['/sounds/bass_0.wav'],
-                                    loop: true, volume: 5,});
-            var cymbal_4 = new Howl({urls: ['/sounds/cymbal_4.wav'],
-                                    loop: true});
-            var drum_4 = new Howl({urls: ['/sounds/drum_4.wav'],
-                                    loop: true});
-            var chords_8 = new Howl({urls: ['/sounds/vocal_0.wav'],
-                                    loop: true});
-            var vocal_8 = new Howl({urls: ['/sounds/vocal_1.wav'],
-                                    loop: true});
 
+        <script>
+            // firebase database refernce
             var myFirebaseRef = new Firebase("https://spartahack-2017.firebaseio.com/");
 
-            // setInterval(function() {}, 4000);
-            // setInterval(setTime, 1000);
-            // var totalSeconds = 0;
-            // function setTime() {
-            //   ++totalSeconds;
-            //   console.log(totalSeconds);
-            // }
+
+            var drum1_4 = new Howl({urls: ['/sounds/drum1_4.wav'],
+                                    loop: true});
+            var drum2_4 = new Howl({urls: ['/sounds/drum2_4.wav'],
+                                    loop: true});
+            var drum3_4 = new Howl({urls: ['/sounds/drum3_4.wav'],
+                                    loop: true});
+            var drum4_8 = new Howl({urls: ['/sounds/drum4_8.wav'],
+                                    loop: false});
+            var drum5_8 = new Howl({urls: ['/sounds/drum5_8.wav'],
+                                    loop: false});
+
+            var instrument1_8 = new Howl({urls: ['/sounds/instrument1_8.wav'],
+                                    loop: false});
+            var instrument2_8 = new Howl({urls: ['/sounds/instrument2_8.wav'],
+                                    loop: false});
+            var instrument3_8 = new Howl({urls: ['/sounds/instrument3_8.wav'],
+                                    loop: false});
+            var instrument4_8 = new Howl({urls: ['/sounds/instrument4_8.wav'],
+                                    loop: false});
+            var instrument5_4 = new Howl({urls: ['/sounds/instrument5_4.wav'],
+                                    loop: true});
+
+            var vocal1_4 = new Howl({urls: ['/sounds/vocal1_4.wav'],
+                                    loop: true});
+            var vocal2_8 = new Howl({urls: ['/sounds/vocal2_8.wav'],
+                                    loop: false});
+            var vocal3_8 = new Howl({urls: ['/sounds/vocal3_8.wav'],
+                                    loop: false});
+            var vocal4_8 = new Howl({urls: ['/sounds/vocal4_8.wav'],
+                                    loop: false});
+            var vocal5_8 = new Howl({urls: ['/sounds/vocal5_8.wav'],
+                                    loop: false});
+
+
+
             var looping = false;
-            // function playSound(ids) {
-            //   for (item in ids) {
-            //     console.log(item);
-            //
-            //     if (item == "1") {      //1 is linked to hi-hat (49 keycode)
-            //     bass1_4.play();
-            //     }
-            //     else if (item == "2"){   //Q is linked to kick1 (113 keycode)
-            //     cymbal_4.play();
-            //     }
-            //     else if (item == "3") {//2 is linked to snare (50 keycode)
-            //     drum_4.play();
-            //     }
-            //   }
-            // }
+
             setInterval(function () {
-              for (item in ids) {
-                item = ids[item];
-                console.log(item);
-                if (item == "1") {      //1 is linked to hi-hat (49 keycode)
-                bass1_4.play();
-                }
-                else if (item == "2"){   //Q is linked to kick1 (113 keycode)
-                cymbal_4.play();
-                }
-                else if (item == "3") {//2 is linked to snare (50 keycode)
-                drum_4.play();
-              } else if (item == "4"){   //3 is linked to kick2 (51 keycode)
-                chords_8.play();
-              } else if (item == "5"){   //3 is linked to kick2 (51 keycode)
-                 vocal_8.play();
-                }
-              ids = [];
-              }
-            }, 4000);
+                for (item in ids) {
+                    item = ids[item];
+                    console.log(item);
+
+                    if (item == "1") {      //1 is linked to hi-hat (49 keycode)
+                        drum1_4.play();
+                    }
+                    else if (item == "2"){   //Q is linked to kick1 (113 keycode)
+                        instrument3_8.play();
+                    }
+                    else if (item == "3") {//2 is linked to snare (50 keycode)
+                        drum3_4.play();
+                    } 
+                    else if (item == "10"){   //3 is linked to kick2 (51 keycode)
+                        drum4_8.play();
+                    } 
+                    else if (item == "5"){   //3 is linked to kick2 (51 keycode)
+                        drum5_8.play();
+                    }
+                    else if (item == "6"){   //Q is linked to kick1 (113 keycode)
+                        //instrument1_8.play();
+                    }
+                    else if (item == "7") {//2 is linked to snare (50 keycode)
+                        instrument1_8.play();
+                    } 
+                    else if (item == "8"){   //3 is linked to kick2 (51 keycode)
+                        instrument2_8.play();
+                    } 
+                    else if (item == "9"){   //3 is linked to kick2 (51 keycode)
+                        instrument3_8.play();
+                    }
+                    else if (item == "4"){
+                        instrument4_8.play();
+                    }
+                    else if (item == "11"){
+                        instrument5_4.play();
+                    }
+                    else if (item == "12"){
+                        //instrument4_8.play();
+                    }
+                    else if (item == "13") {//2 is linked to snare (50 keycode)
+                        vocal1_4.play();
+                    } 
+                    else if (item == "14"){   //3 is linked to kick2 (51 keycode)
+                        vocal2_8.play();
+                    } 
+                    else if (item == "15"){   //3 is linked to kick2 (51 keycode)
+                        vocal3_8.play();
+                    }
+                    else if (item == "16"){
+                        vocal4_8.play();
+                    }
+                    else if (item == "17"){
+                        vocal5_8.play();
+                    }
+                    else if (item == "18"){
+                        //vocal6.play();
+                    }
+                        ids = [];
+                    }
+                }, 4000);
 
             var ids = []
             myFirebaseRef.on("child_added",function(soundback){
                              var soundid = soundback.val();
                              ids.push(soundid);
-                            //  if (soundid == "1") {      //1 is linked to hi-hat (49 keycode)
-                            //  bass1_4.play();
-                            //  }
-                            //  else if (soundid == "2"){   //Q is linked to kick1 (113 keycode)
-                            //  cymbal_4.play();
-                            //  }
-                            //  else if (soundid == "3") {//2 is linked to snare (50 keycode)
-                            //  drum_4.play();
-                             //
-                            //  }
-                             if (soundid == "119") {//w is linked to clap (119 keycode)
-                             clap.play();
-
-                             }
-                             else if (soundid == "101") {//e is linked to crash (101 keycode)
-                             crash.play();
-                             }
-                             else if (soundid == "190") {//190 is linked to loop1
-                             loop1.play();
-                             }
-                             else if (soundid == "191") {//191 is linked to loop2
-                             loop2.play();
-                             }
-
-
-
-
-                             else if (soundid == "97") {//a is linked to key_low (97 keycode)
-                             key_low.play();
-
-                             }
-                             else if (soundid == "115") {//s is linked to key_mid (115 keycode)
-                             key_mid.play();
-
-                             }
-                             else if (soundid == "100") {//d is linked to key_midhigh (100 keycode)
-                             key_midhigh.play();
-
-                             }
-                             else if (soundid == "102") {//f is linked to key_high (102 keycode)
-                             key_high.play();
-
-                             }
-                             else if (soundid == "30"){ //two quarter note piano low keys
-                             pianohalflow.play();
-                             }
-                             else if (soundid == "31"){//two quarter note piano mid keys
-                             pianohalfmid.play();
-                             }
-                             else if (soundid == "32"){//two quarter note piano high keys
-                             pianohalfhigh.play();
-                             }
-
-
-
-                             else if (soundid == "103") {//g is linked to synth1_lowest (103 keycode)
-                             synth1_lowest.play();
-
-                             }
-                             else if (soundid == "104") {//h is linked to synth1_low (104 keycode)
-                             synth1_low.play();
-
-                             }
-                             else if (soundid == "106") {//j is linked to synth1_midlow (106 keycode)
-                             synth1_midlow.play();
-
-                             }
-                             else if (soundid == "109") {//m is linked to synth1_mid (109 keycode)
-                             synth1_mid.play();
-                             }
-                             else if (soundid == "107") {//k is linked to synth1_high (107 keycode)
-                             synth1_high.play();
-
-                             }
-                             else if (soundid == "108") {//l is linked to synth1_highest (108 keycode)
-                             synth1_highest.play();
-
-                             }
-
-
-                             else if (soundid == "200"){//donald trump soundboard
-                             donald.play();
-                             }
-                             else if (soundid == "201"){//inception sound
-                             inception.play();
-                             }
-                             else if (soundid == "6"){
-                             drakeohyah.play();
-                             }
                              soundback.ref().remove();//remove child from node
                              });
 
