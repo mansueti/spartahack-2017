@@ -74,173 +74,119 @@
       firebase.initializeApp(config);
     </script>
     <script>
-        var database = firebase.database().ref();
-        // var buttonDrum1 = document.getElementById("drum1_4.wav");
-        // var buttonDrum2 = document.getElementById("drum2_4.wav");
-        // var buttonDrum3 = document.getElementById("drum3_4.wav");
-        // var buttonDrum4 = document.getElementById("drum4_8.wav");
-        // var buttonDrum5 = document.getElementById("drum5_8.wav");
-        // var buttonDrum6 = document.getElementById("drum6_8.wav");
-        // var buttonVocal1 = document.getElementById("vocal1_4.wav");
-        // var buttonVocal2 = document.getElementById("vocal2_8.wav");
-        // var buttonVocal3 = document.getElementById("vocal3_8.wav");
-        // var buttonVocal4 = document.getElementById("vocal4_8.wav");
-        // var buttonVocal5 = document.getElementById("vocal5_8.wav");
-        // var buttonVocal6 = document.getElementById("vocal6_8.wav");
-        // var buttonInstrument1 = document.getElementById("instrument1_8.wav");
-        // var buttonInstrument2 = document.getElementById("instrument2_8.wav");
-        // var buttonInstrument3 = document.getElementById("instrument3_8.wav");
-        // var buttonInstrumentm4 = document.getElementById("instrument4_8.wav");
-        // var buttonInstrument5 = document.getElementById("instrument5_4.wav");
-        // var buttonInstrument6 = document.getElementById("instrument6_4.wav");
-        // var buttonCrash = document.getElementById("crashElement");
-        // var buttonLoop1 = document.getElementById("loop1Element");
-        // var buttonLoop2 = document.getElementById("loop2Element");
-        // var buttonmetronome = document.getElementById("metronomeon");
-        // buttonDrum0.addEventListener("touchstart",handledrum0,false);
-        // buttonDrum1.addEventListener("touchstart",handledrum1,false);
-        // buttonDrum2.addEventListener("touchstart",handledrum2,false);
+        var database = firebase.database().ref('/TestLobby0/Data');
 
 
-    function handledrum1(e){
-        //e.preventDefault();
-        database.push("1");
+        function handledrum1(e){
+            //e.preventDefault();
+            database.push("1");
 
 
-    }
-    function handledrum2(e){
-        //e.preventDefault();
-        database.push("2");
+        }
+        function handledrum2(e){
+            //e.preventDefault();
+            database.push("2");
 
 
-    }
-    function handledrum3(e){
-        //e.preventDefault();
-        database.push("3");
+        }
+        function handledrum3(e){
+            //e.preventDefault();
+            database.push("3");
 
-    }
-    function handledrum4(e){
-        //e.preventDefault();
-        database.push("4");
-        // myFirebaseRef.push("119");
+        }
+        function handledrum4(e){
+            //e.preventDefault();
+            database.push("4");
+            // myFirebaseRef.push("119");
 
-    }
-    function handledrum5(e){
-        // e.preventDefault();
-        database.push("5");
+        }
+        function handledrum5(e){
+            // e.preventDefault();
+            database.push("5");
 
-    }
+        }
 
-    function handledrum6(e){
-        //e.preventDefault();
-        database.push("6");
-
-
-    }
-    function handleinstrument1(e){
-        //e.preventDefault();
-        database.push("7");
+        function handledrum6(e){
+            //e.preventDefault();
+            database.push("6");
 
 
-    }
-    function handleinstrument2(e){
-        //e.preventDefault();
-        database.push("8");
-
-    }
-    function handleinstrument3(e){
-        //e.preventDefault();
-        database.push("9");
-        // myFirebaseRef.push("119");
-
-    }
-    function handleinstrument4(e){
-        // e.preventDefault();
-        database.push("10");
-
-    }
-
-    function handleinstrument5(e){
-        //e.preventDefault();
-        database.push("11");
+        }
+        function handleinstrument1(e){
+            //e.preventDefault();
+            database.push("7");
 
 
-    }
-    function handleinstrument6(e){
-        //e.preventDefault();
-        database.push("12");
+        }
+        function handleinstrument2(e){
+            //e.preventDefault();
+            database.push("8");
+
+        }
+        function handleinstrument3(e){
+            //e.preventDefault();
+            database.push("9");
+            // myFirebaseRef.push("119");
+
+        }
+        function handleinstrument4(e){
+            // e.preventDefault();
+            database.push("10");
+
+        }
+
+        function handleinstrument5(e){
+            //e.preventDefault();
+            database.push("11");
 
 
-    }
-    function handlevocal1(e){
-        //e.preventDefault();
-        database.push("13");
-
-    }
-    function handlevocal2(e){
-        //e.preventDefault();
-        database.push("14");
-
-    }function handlevocal3(e){
-        //e.preventDefault();
-        database.push("15");
-
-    }function handlevocal4(e){
-        //e.preventDefault();
-        database.push("16");
-
-    }function handlevocal5(e){
-        //e.preventDefault();
-        database.push("17");
-
-    }function handlevocal6(e){
-        //e.preventDefault();
-        database.push("18");
-
-    }
+        }
+        function handleinstrument6(e){
+            //e.preventDefault();
+            database.push("12");
 
 
+        }
+        function handlevocal1(e){
+            //e.preventDefault();
+            database.push("13");
 
+        }
+        function handlevocal2(e){
+            //e.preventDefault();
+            database.push("14");
 
+        }function handlevocal3(e){
+            //e.preventDefault();
+            database.push("15");
 
+        }function handlevocal4(e){
+            //e.preventDefault();
+            database.push("16");
 
-    // function handlecrash(e){
-    //     e.preventDefault();
-    //     // myFirebaseRef.push("101");
-    //
-    // }
-    // function handleloop1(e){
-    //     e.preventDefault();
-    //     // myFirebaseRef.push("190");
-    // }
-    // function handleloop2(e){
-    //     e.preventDefault();
-    //     // myFirebaseRef.push("191");
-    // }
-    // function handlemetr(e){
-    //     e.preventDefault();
-    //     // myFirebaseRef.push("1");
-    // }
+        }function handlevocal5(e){
+            //e.preventDefault();
+            database.push("17");
 
-    // function toggleColor(id) {
-    //   var element = document.getElementById(id);
-    //   console.log(element.style.backgroundColor);
-    //   if (element.style.backgroundColor == "" || element.style.backgroundColor == "#ffffff" || element.style.backgroundColor == "rgb(255,255,255)") {
-    //     element.style.backgroundColor = "#715bff";
-    //   } else {
-    //     element.style.backgroundColor = "";
-    //   }
-    //   // this.style.background = #000000;
-    // }
+        }function handlevocal6(e){
+            //e.preventDefault();
+            database.push("18");
+        }
     </script>
+
     <script type="text/javascript" src="libs/library/howler.js"></script>
     <script type="text/javascript" src="libs/library/howler.min.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
 
+    <!-- RECEIVE HANDLER FOR FIREBASE DATABASE-->
+
+
     <script>
         // firebase database refernce
         var myFirebaseRef = new Firebase("https://spartahack-2017.firebaseio.com/");
+        
+        var currentLobby = firebase.database().ref('/TestLobby0/Data');
 
 
         var drum1_4 = new Howl({urls: ['/sounds/drum1_4.wav'],
@@ -303,11 +249,10 @@
             }, 4000);
 
         var ids = [];
-        var holdingIds = [];
-        myFirebaseRef.on("child_added",function(soundback){
+        
+        currentLobby.on("child_added",function(soundback){
                          var soundid = soundback.val();
                          var element = document.getElementById(soundid);
-                         console.log("ha");
                          if (element.style.backgroundColor == "" || element.style.backgroundColor == "#ffffff" || element.style.backgroundColor == "rgb(255,255,255)") {
                            element.style.backgroundColor = "#715bff";
                          } else {
