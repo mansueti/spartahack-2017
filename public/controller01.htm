@@ -32,7 +32,7 @@
             <a class="myButton" href="#" id="drum_4" onclick="toggleColor(this.id); handledrum2();"></a>
         </div>
         <div class="row">
-            <a class="myButton" href="#" id="snare1Element" onclick="toggleColor(this.id); console.log(10);"></a> <!--Snare-->
+            <a class="myButton" href="#" id="vocal_8" onclick="toggleColor(this.id); handledrum3();"></a> <!--Snare-->
             <a class="myButton" href="#" id="clap1Element" onclick="toggleColor(this.id); console.log(11);"></a> <!--Clap-->
             <a class="myButton" href="#" id="metronomepause" onclick="toggleColor(this.id); console.log(12);"></a>
         </div>
@@ -74,15 +74,15 @@
         var buttonDrum1 = document.getElementById("cymbal_4");
         var buttonDrum2 = document.getElementById("drum_4");
         var chords_8 = document.getElementById("chords_8");
-        var buttonClap1 = document.getElementById("clap1Element");
-        var buttonHihat = document.getElementById("hihatElement");
-        var buttonCrash = document.getElementById("crashElement");
-        var buttonLoop1 = document.getElementById("loop1Element");
-        var buttonLoop2 = document.getElementById("loop2Element");
-        var buttonmetronome = document.getElementById("metronomeon");
-        buttonDrum0.addEventListener("touchstart",handledrum0,false);
-        buttonDrum1.addEventListener("touchstart",handledrum1,false);
-        buttonDrum2.addEventListener("touchstart",handledrum2,false);
+        // var buttonClap1 = document.getElementById("clap1Element");
+        var buttonDrum3 = document.getElementById("vocal_8");
+        // var buttonCrash = document.getElementById("crashElement");
+        // var buttonLoop1 = document.getElementById("loop1Element");
+        // var buttonLoop2 = document.getElementById("loop2Element");
+        // var buttonmetronome = document.getElementById("metronomeon");
+        // buttonDrum0.addEventListener("touchstart",handledrum0,false);
+        // buttonDrum1.addEventListener("touchstart",handledrum1,false);
+        // buttonDrum2.addEventListener("touchstart",handledrum2,false);
 
 
     function handledrum0(e){
@@ -108,28 +108,28 @@
         // myFirebaseRef.push("119");
 
     }
-    function handlehihat(e){
-        e.preventDefault();
-        // myFirebaseRef.push("49");
+    function handledrum3(e){
+        // e.preventDefault();
+        database.push("5");
 
     }
-    function handlecrash(e){
-        e.preventDefault();
-        // myFirebaseRef.push("101");
-
-    }
-    function handleloop1(e){
-        e.preventDefault();
-        // myFirebaseRef.push("190");
-    }
-    function handleloop2(e){
-        e.preventDefault();
-        // myFirebaseRef.push("191");
-    }
-    function handlemetr(e){
-        e.preventDefault();
-        // myFirebaseRef.push("1");
-    }
+    // function handlecrash(e){
+    //     e.preventDefault();
+    //     // myFirebaseRef.push("101");
+    //
+    // }
+    // function handleloop1(e){
+    //     e.preventDefault();
+    //     // myFirebaseRef.push("190");
+    // }
+    // function handleloop2(e){
+    //     e.preventDefault();
+    //     // myFirebaseRef.push("191");
+    // }
+    // function handlemetr(e){
+    //     e.preventDefault();
+    //     // myFirebaseRef.push("1");
+    // }
 
     function toggleColor(id) {
       var element = document.getElementById(id);

@@ -19,35 +19,78 @@
         <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
         <script>
-            var bass1_4 = new Howl({urls: ['/sounds/bass1_4.wav'],
-                                    loop: true});
+            var bass1_4 = new Howl({urls: ['/sounds/bass_0.wav'],
+                                    loop: true, volume: 5,});
             var cymbal_4 = new Howl({urls: ['/sounds/cymbal_4.wav'],
                                     loop: true});
             var drum_4 = new Howl({urls: ['/sounds/drum_4.wav'],
                                     loop: true});
-            var chords_8 = new Howl({urls: ['/sounds/chords_8.wav'],
+            var chords_8 = new Howl({urls: ['/sounds/vocal_0.wav'],
+                                    loop: true});
+            var vocal_8 = new Howl({urls: ['/sounds/vocal_1.wav'],
                                     loop: true});
 
             var myFirebaseRef = new Firebase("https://spartahack-2017.firebaseio.com/");
 
+            // setInterval(function() {}, 4000);
+            // setInterval(setTime, 1000);
+            // var totalSeconds = 0;
+            // function setTime() {
+            //   ++totalSeconds;
+            //   console.log(totalSeconds);
+            // }
+            var looping = false;
+            // function playSound(ids) {
+            //   for (item in ids) {
+            //     console.log(item);
+            //
+            //     if (item == "1") {      //1 is linked to hi-hat (49 keycode)
+            //     bass1_4.play();
+            //     }
+            //     else if (item == "2"){   //Q is linked to kick1 (113 keycode)
+            //     cymbal_4.play();
+            //     }
+            //     else if (item == "3") {//2 is linked to snare (50 keycode)
+            //     drum_4.play();
+            //     }
+            //   }
+            // }
+            setInterval(function () {
+              for (item in ids) {
+                item = ids[item];
+                console.log(item);
+                if (item == "1") {      //1 is linked to hi-hat (49 keycode)
+                bass1_4.play();
+                }
+                else if (item == "2"){   //Q is linked to kick1 (113 keycode)
+                cymbal_4.play();
+                }
+                else if (item == "3") {//2 is linked to snare (50 keycode)
+                drum_4.play();
+              } else if (item == "4"){   //3 is linked to kick2 (51 keycode)
+                chords_8.play();
+              } else if (item == "5"){   //3 is linked to kick2 (51 keycode)
+                 vocal_8.play();
+                }
+              ids = [];
+              }
+            }, 4000);
 
-
+            var ids = []
             myFirebaseRef.on("child_added",function(soundback){
                              var soundid = soundback.val();
-                             if (soundid == "1") {      //1 is linked to hi-hat (49 keycode)
-                             bass1_4.play();
-                             }
-                             else if (soundid == "2"){   //Q is linked to kick1 (113 keycode)
-                             cymbal_4.play();
-                             }
-                             else if (soundid == "3") {//2 is linked to snare (50 keycode)
-                             drum_4.play();
-
-                             }
-                             else if (soundid == "4"){   //3 is linked to kick2 (51 keycode)
-                             chords_8.play();
-                             }
-                             else if (soundid == "119") {//w is linked to clap (119 keycode)
+                             ids.push(soundid);
+                            //  if (soundid == "1") {      //1 is linked to hi-hat (49 keycode)
+                            //  bass1_4.play();
+                            //  }
+                            //  else if (soundid == "2"){   //Q is linked to kick1 (113 keycode)
+                            //  cymbal_4.play();
+                            //  }
+                            //  else if (soundid == "3") {//2 is linked to snare (50 keycode)
+                            //  drum_4.play();
+                             //
+                            //  }
+                             if (soundid == "119") {//w is linked to clap (119 keycode)
                              clap.play();
 
                              }
@@ -127,9 +170,7 @@
                              drakeohyah.play();
                              }
                              soundback.ref().remove();//remove child from node
-
                              });
-
 
             </script>
     </body>

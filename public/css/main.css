@@ -1,0 +1,57 @@
+body {
+  height: 100%;
+  vertical-align: middle;
+  width: 100%;
+  margin: 0 auto 0 auto;
+  text-align: center;
+}
+
+@font-face {
+  font-family: 'firstfont';
+  src: url('/fonts/musicman.ttf');
+}
+
+.label {
+  font-family: 'firstfont';
+  font-size: 5em;
+  font-weight: normal;
+}
+
+
+.myButton {
+    background-color:#ffffff;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:8px;
+    padding:60px 60px;
+    border-radius: 10px;
+    border-width: 2px;
+    text-shadow: : 50px;
+    /*text-decoration:none;*/
+}
+.myButton:hover {
+  /* IE10+ */
+  background-image: -ms-radial-gradient(center, ellipse farthest-corner, #FFFFFF -30%, #2CB831 100%);
+
+  /* Mozilla Firefox */
+  background-image: -moz-radial-gradient(center, ellipse farthest-corner, #FFFFFF -30%, #2CB831 100%);
+
+  /* Opera */
+  background-image: -o-radial-gradient(center, ellipse farthest-corner, #FFFFFF -30%, #2CB831 100%);
+
+  /* Webkit (Safari/Chrome 10) */
+  background-image: -webkit-gradient(radial, center center, 0, center center, 286, color-stop(-30, #FFFFFF), color-stop(100, #2CB831));
+
+  /* Webkit (Chrome 11+) */
+  background-image: -webkit-radial-gradient(center, ellipse farthest-corner, #FFFFFF -30%, #2CB831 100%);
+
+  /* W3C Markup */
+  background-image: radial-gradient(ellipse farthest-corner at center, #FFFFFF -30%, #2CB831 100%);
+
+    /*background-color:#5cbf2a;*/
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
