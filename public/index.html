@@ -60,26 +60,12 @@ font-family: 'Julius Sans One', sans-serif;
 
 <script>
 
-
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-
-	function myFunction() {
-		document.getElementById("actual").innerHTML = "Please enter the code: ";
-		val = document.getElementById("inputtext").value;
-
-	}
-
-
-}
-else{
-	var val = Math.floor((Math.random() * 1111) + 9999);
+  var val = Math.floor((Math.random() * 1111) + 9999);
 
 	function myFunction() {
 		document.getElementById("demo").innerHTML = val;
 		document.getElementById("inputtext").style.display='none';
 	}
-
-}
 
 function gotocontroller(){
 

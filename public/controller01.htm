@@ -14,7 +14,9 @@
 
 
 	<div class="container">
+    <a href="/index.html"><h5 class="label back">Back </h5></a>
     <div class="row allbuttons" style="text-align:center">
+
       <div class="col-md-4 text-center button"><br><br><br>
         <div class="row" >
             <h1 class="label"> Vocals </h1><br><br>
@@ -55,8 +57,8 @@
             <a class="myButton"  id="12" onclick="  handleinstrument6();"></a>
         </div><br><br><br>
       </div>
-
-
+      <div id="lobbynum" style="font-size: 1.5em"> Your lobby number is: </div>
+      <script>document.getElementById('lobbynum').innerHTML += window.location.hash.substring(1);</script>
     </div>
 	</div>
 
