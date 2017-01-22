@@ -74,7 +74,8 @@
       firebase.initializeApp(config);
     </script>
     <script>
-        var database = firebase.database().ref('/TestLobby0/Data');
+        var text = window.location.hash.substring(1);
+        var database = firebase.database().ref("/"+text+"/Data");
 
 
         function handledrum1(e){
@@ -185,8 +186,8 @@
     <script>
         // firebase database refernce
         var myFirebaseRef = new Firebase("https://spartahack-2017.firebaseio.com/");
-        
-        var currentLobby = firebase.database().ref('/TestLobby0/Data');
+
+        var currentLobby = firebase.database().ref("/"+text+"/Data");
 
 
         var drum1_4 = new Howl({urls: ['/sounds/drum1_4.wav'],
@@ -249,7 +250,7 @@
             }, 4000);
 
         var ids = [];
-        
+
         currentLobby.on("child_added",function(soundback){
                          var soundid = soundback.val();
                          var element = document.getElementById(soundid);
